@@ -1,0 +1,7 @@
+*.jpg
+*.png
+*.bmp
+*.ppm
+*.mp4
+data/
+*.data
