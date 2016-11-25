@@ -1,10 +1,6 @@
 //
 //  Learner.h
 //  TLD
-//
-//  Created by 陈裕昕 on 14/11/7.
-//  Copyright (c) 2014年 Fudan. All rights reserved.
-//
 
 #ifndef __TLD__Learner__
 #define __TLD__Learner__
@@ -20,8 +16,7 @@ class Detector;
 using namespace std;
 using namespace cv;
 
-class Learner
-{
+class Learner {
 private:
     Detector *detector;
     PatchGenerator patchGenerator;

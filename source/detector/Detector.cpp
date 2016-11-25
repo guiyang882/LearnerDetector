@@ -1,10 +1,6 @@
 //
 //  Detector.cpp
 //  TLD
-//
-//  Created by 陈裕昕 on 11/5/14.
-//  Copyright (c) 2014 Fudan. All rights reserved.
-//
 
 #include "Detector.h"
 

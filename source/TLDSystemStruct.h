@@ -1,10 +1,6 @@
 //
 //  systemStruct.h
 //  MedianFlow
-//
-//  Created by 陈裕昕 on 14/11/8.
-//  Copyright (c) 2014年 陈裕昕. All rights reserved.
-//
 
 #ifndef MedianFlow_systemStruct_h
 #define MedianFlow_systemStruct_h
@@ -33,8 +29,7 @@ static const TYPE_MF_BB BB_ERROR = TYPE_MF_BB(PT_ERROR, PT_ERROR);
 
 typedef Rect TYPE_BBOX;
 
-class TYPE_DETECTOR_SCANBB : public TYPE_BBOX
-{
+class TYPE_DETECTOR_SCANBB : public TYPE_BBOX {
 public:
     float overlap; //overlap
     char status;
@@ -54,13 +49,11 @@ public:
     {
     }
     
-    static bool cmpOL(const TYPE_DETECTOR_SCANBB &a, const TYPE_DETECTOR_SCANBB &b)
-    {
+    static bool cmpOL(const TYPE_DETECTOR_SCANBB &a, const TYPE_DETECTOR_SCANBB &b) {
         return a.overlap > b.overlap;
     }
     
-    static bool cmpP(const TYPE_DETECTOR_SCANBB &a, const TYPE_DETECTOR_SCANBB &b)
-    {
+    static bool cmpP(const TYPE_DETECTOR_SCANBB &a, const TYPE_DETECTOR_SCANBB &b) {
         return a.posterior > b.posterior;
     }
 };
@@ -154,8 +147,6 @@ static const char DETECTOR_ACCEPTED = 1;
 static const char DETECTOR_REJECT_VAR = 2;
 static const char DETECTOR_REJECT_RF = 3;
 static const char DETECTOR_REJECT_NN = 4;
-
-
 
 static const bool NCC_USE_OPENCV = 0; // 1(lower speed): use matchTemplate(), 0(faster)
 static const bool NCC_FAST = 1; // 1 : my own implementation

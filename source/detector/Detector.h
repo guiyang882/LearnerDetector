@@ -1,10 +1,6 @@
 //
 //  Detector.h
 //  TLD
-//
-//  Created by 陈裕昕 on 11/5/14.
-//  Copyright (c) 2014 Fudan. All rights reserved.
-//
 
 #ifndef __TLD__Detector__
 #define __TLD__Detector__
@@ -24,8 +20,7 @@
 using namespace std;
 using namespace cv;
 
-class Detector
-{
+class Detector {
     friend class Learner;
 private:
     RandomFernsClassifier rFClassifier;
@@ -49,7 +44,6 @@ private:
     void genScanBB();
     
     void sortByOverlap(const TYPE_BBOX &bb, bool rand = false);
-    
     void genPosData(const Mat &img, const Mat &imgB, const Mat &img32F, TYPE_TRAIN_DATA_SET &trainDataSetNN, TYPE_TRAIN_DATA_SET &trainDataSetRF);
     void genNegData(const Mat &img, const Mat &imgB, const Mat &img32F, TYPE_TRAIN_DATA_SET &trainDataSetNN, TYPE_TRAIN_DATA_SET &trainDataSetRF);
     
@@ -59,9 +53,7 @@ private:
 public:
     Detector(){}
     void init(const Mat &img, const Mat &imgB, const Mat &img32F, const Rect &patternBB);
-    
     void dectect(const Mat &img, const Mat &imgB, const Mat &img32F, TYPE_DETECTOR_RET &ret);
-    
     void updataNNPara(const Mat &img32F, TYPE_DETECTOR_SCANBB &sbb);
     float getNNThPos();
     
