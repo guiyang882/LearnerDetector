@@ -1,10 +1,6 @@
 //
 //  TLD.h
 //  TLD
-//
-//  Created by 陈裕昕 on 14/11/7.
-//  Copyright (c) 2014年 Fudan. All rights reserved.
-//
 
 #ifndef __TLD__TLD__
 #define __TLD__TLD__
@@ -23,8 +19,7 @@
 using namespace std;
 using namespace cv;
 
-class TLD
-{
+class TLD {
 private:
     MedianFlow *tracker;
     Detector detector;

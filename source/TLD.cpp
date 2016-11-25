@@ -1,15 +1,10 @@
 //
 //  TLD.cpp
 //  TLD
-//
-//  Created by 陈裕昕 on 14/11/7.
-//  Copyright (c) 2014年 Fudan. All rights reserved.
-//
 
 #include "TLD.h"
 
-TLD::TLD(const Mat &img, const TYPE_BBOX &_bb)
-{
+TLD::TLD(const Mat &img, const TYPE_BBOX &_bb) {
     bbox = _bb;
     
     setNextFrame(img);
@@ -20,24 +15,18 @@ TLD::TLD(const Mat &img, const TYPE_BBOX &_bb)
     trainValid = true;
 }
 
-TLD::~TLD()
-{
+TLD::~TLD() {
     
 }
 
-void TLD::setNextFrame(const cv::Mat &frame)
-{
+void TLD::setNextFrame(const cv::Mat &frame) {
     cv::swap(prevImg, nextImg);
-    
     cvtColor(frame, nextImg, CV_BGR2GRAY);
-    
     GaussianBlur(nextImg, nextImgB, Size(3, 3), 1.5);
-    
     nextImg.convertTo(nextImg32F, CV_32F);
 }
 
-TYPE_BBOX TLD::getInside(const TYPE_BBOX &bb)
-{
+TYPE_BBOX TLD::getInside(const TYPE_BBOX &bb) {
     int tlx = max(0, bb.tl().x), tly = max(0, bb.tl().y);
     int brx = min(nextImg.cols, bb.br().x), bry = min(nextImg.rows, bb.br().y);
     Rect retBB(tlx, tly, brx - tlx, bry - tly);
@@ -46,18 +35,13 @@ TYPE_BBOX TLD::getInside(const TYPE_BBOX &bb)
     return retBB;
 }
 
-int TLD::cluster()
-{
+int TLD::cluster() {
     clusterBB.clear();
     
     vector<vector<int> > edges(detectorRet.size());
-    
-    for(int i = 0; i < detectorRet.size(); i++)
-    {
-        for(int j = i + 1; j < detectorRet.size(); j++)
-        {
-            if(overlap(detectorRet[i], detectorRet[j]) > 0.5)
-            {
+    for(int i = 0; i < detectorRet.size(); i++) {
+        for(int j = i + 1; j < detectorRet.size(); j++) {
+            if(overlap(detectorRet[i], detectorRet[j]) > 0.5) {
                 edges[i].push_back(j);
                 edges[j].push_back(i);
             }
@@ -68,21 +52,17 @@ int TLD::cluster()
     queue<int> Q;
     
     int cntBelong = 0;
-    for(int i = 0; i < detectorRet.size(); i++)
-    {
+    for(int i = 0; i < detectorRet.size(); i++) {
         if(belong[i] != -1) continue;
         
         belong[i] = cntBelong;
         Q.push(i);
         
-        while(!Q.empty())
-        {
+        while(!Q.empty()) {
             int x = Q.front();
             Q.pop();
-            for(auto &y : edges[x])
-            {
-                if(belong[y] == -1)
-                {
+            for(auto &y : edges[x]) {
+                if(belong[y] == -1) {
                     belong[y] = cntBelong;
                     Q.push(y);
                 }
@@ -92,14 +72,12 @@ int TLD::cluster()
         cntBelong++;
     }
     
-    for(int i = 0; i < cntBelong; i++)
-    {
+    for(int i = 0; i < cntBelong; i++) {
         float x = 0., y = 0., height = 0., width = 0.;
         float Sc = 0.;
         int count = 0;
         
-        for(int j = 0; j < detectorRet.size(); j++)
-        {
+        for(int j = 0; j < detectorRet.size(); j++) {
             if(belong[j] != i) continue;
             
             x += detectorRet[j].x;
@@ -129,8 +107,7 @@ int TLD::cluster()
     return cntBelong;
 }
 
-int TLD::track()
-{
+int TLD::track() {
     //track
     tracker = new MedianFlow(prevImg, nextImg);
     
@@ -139,8 +116,7 @@ int TLD::track()
     TYPE_DETECTOR_SCANBB trackerRet(Rect(round(_trackerRet.x), round(_trackerRet.y), round(_trackerRet.width), round(_trackerRet.height)));
     TYPE_DETECTOR_SCANBB trackerRetInside = getInside(trackerRet);
     
-    if(trackerStatus == MF_TRACK_SUCCESS)
-    {
+    if(trackerStatus == MF_TRACK_SUCCESS) {
         detector.updataNNPara(nextImg32F, trackerRetInside);
     }
     
@@ -151,46 +127,37 @@ int TLD::track()
     float trackSc = -1;
     TYPE_DETECTOR_SCANBB finalBB, finalBBInside;
     
-    if(trackerStatus != MF_TRACK_SUCCESS && detectorRet.size() == 0)
-    {
+    if(trackerStatus != MF_TRACK_SUCCESS && detectorRet.size() == 0) {
         bbox = BB_ERROR;
         
         delete tracker;
         return TLD_TRACK_FAILED;
     }
     
-    if(trackerStatus != MF_TRACK_SUCCESS)
-    {
+    if(trackerStatus != MF_TRACK_SUCCESS) {
         trainValid = false;
-    }
-    else
-    {
+    } else {
         int value = trackerRetInside.Sr > max(0.7f, detector.getNNThPos());
         
         trainValid |= value;
     }
     
-    if(trackerStatus == MF_TRACK_SUCCESS)
-    {
+    if(trackerStatus == MF_TRACK_SUCCESS) {
         trackSc = trackerRetInside.Sc;
         finalBB = trackerRet;
         finalBBInside = trackerRetInside;
     }
     
-    if(detectorRet.size())
-    {
+    if(detectorRet.size()) {
         //cluster
         int cntBelong = cluster();
         
-        if(trackerStatus == MF_TRACK_SUCCESS)
-        {
+        if(trackerStatus == MF_TRACK_SUCCESS) {
             int confidentDetections = 0;
             int lastId = 0;
             
-            for(int i = 0; i < cntBelong; i++)
-            {
-                if(overlap(clusterBB[i], trackerRet) < 0.5 && clusterBB[i].Sc > trackSc)
-                {
+            for(int i = 0; i < cntBelong; i++) {
+                if(overlap(clusterBB[i], trackerRet) < 0.5 && clusterBB[i].Sc > trackSc) {
                     confidentDetections++;
                     lastId = i;
                 }
@@ -198,21 +165,16 @@ int TLD::track()
             
             if(confidentDetections == 1) {
                 finalBB = finalBBInside = clusterBB[lastId];
-                
                 trainValid = false;
-            }
-            else
-            {
+            } else {
                 stringstream info;
                 info << "Found " << confidentDetections << " confidence clusters. Adjust bouding box by detection result.";
 
                 int closeDetections = 0;
                 float cx = 0., cy = 0., cw = 0., ch = 0.;
 
-                for(int i = 0; i < detectorRet.size(); i++)
-                {
-                    if(overlap(detectorRet[i], trackerRet) > 0.7)
-                    {
+                for(int i = 0; i < detectorRet.size(); i++) {
+                    if(overlap(detectorRet[i], trackerRet) > 0.7) {
                         closeDetections++;
                         
                         cx += detectorRet[i].x;
@@ -236,21 +198,13 @@ int TLD::track()
                     return TLD_TRACK_FAILED;
                 }
             }
-        }
-        else
-        {
-            if(cntBelong == 1)
-            {
+        } else {
+            if(cntBelong == 1) {
                 finalBB = finalBBInside = clusterBB[0];
-                
                 trainValid = false;
-            }
-            else
-            {
+            } else {
                 bbox = BB_ERROR;
-                
                 trainValid = false;
-                
                 delete tracker;
                 return TLD_TRACK_FAILED;
             }
@@ -259,14 +213,10 @@ int TLD::track()
     
     detector.updataNNPara(nextImg32F, finalBBInside);
     
-    if(trainValid)
-    {
-        if(finalBB == finalBBInside)
-        {
-            if(finalBBInside.Sr > 0.5)
-            {
-                if(finalBBInside.Sn < 0.95)
-                {
+    if(trainValid) {
+        if(finalBB == finalBBInside) {
+            if(finalBBInside.Sr > 0.5) {
+                if(finalBBInside.Sn < 0.95) {
                     learner.learn(nextImg, nextImgB, nextImg32F, finalBB);
                 }
             }
@@ -279,13 +229,11 @@ int TLD::track()
     return TLD_TRACK_SUCCESS;
 }
 
-TYPE_BBOX TLD::getBB()
-{
+TYPE_BBOX TLD::getBB() {
     return bbox;
 }
 
-float TLD::overlap(const TYPE_BBOX &bb1, const TYPE_BBOX &bb2)
-{
+float TLD::overlap(const TYPE_BBOX &bb1, const TYPE_BBOX &bb2) {
     int tlx, tly, brx, bry;
     
     tlx = max(bb1.tl().x, bb2.tl().x);

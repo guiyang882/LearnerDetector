@@ -1,17 +1,8 @@
 //
 //  VideoController.cpp
 //  MedianFlow
-//
-//  Created by 陈裕昕 on 10/16/14.
-//  Copyright (c) 2014 陈裕昕. All rights reserved.
-//
 
 #include "VideoController.h"
-
-VideoController::~VideoController()
-{
-    if(!imageMode) delete videoCapture;
-}
 
 VideoController::VideoController(const string &path):
     curr(0), frame(0), cameraMode(false), imageMode(false)
@@ -49,25 +40,25 @@ VideoController::VideoController(int camera):
     _frameSize = Size(width * (480.f /width), height * (480.f / width));
 }
 
-Mat VideoController::getCurrFrame()
-{
+VideoController::~VideoController() {
+    if(!imageMode)
+        delete videoCapture;
+}
+
+Mat VideoController::getCurrFrame() {
     return frames[curr];
 }
 
-Mat VideoController::getPrevFrame()
-{
+Mat VideoController::getPrevFrame() {
     return frames[curr ^ 1];
 }
 
-bool VideoController::readNextFrame()
-{
+bool VideoController::readNextFrame() {
     curr ^= 1;
     frame++;
     
-    if(imageMode)
-    {
-        if(frame <= totalFrame)
-        {
+    if(imageMode) {
+        if(frame <= totalFrame) {
             char filename[20];
             sprintf(filename, "%.5d", frame);
             string fullPath = path + filename + append;
@@ -75,16 +66,11 @@ bool VideoController::readNextFrame()
             return true;
         }
         return false;
-    }
-    else
-    {
+    } else {
         bool f = videoCapture -> read(frames[curr]);
-        
         resize(frames[curr], frames[curr], _frameSize);
-        
         return f;
     }
-    
     return false;
 }
 
@@ -100,5 +86,6 @@ int VideoController::frameNumber()
 
 void VideoController::jumpToFrameNum(int num)
 {
-    while(frameNumber() < num) readNextFrame();
+    while(frameNumber() < num)
+        readNextFrame();
 }
