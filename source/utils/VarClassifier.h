@@ -12,8 +12,7 @@
 using namespace std;
 using namespace cv;
 
-class VarClassifier
-{
+class VarClassifier {
 private:
     Mat sum, sqsum;
     

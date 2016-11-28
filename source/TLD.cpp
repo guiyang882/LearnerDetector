@@ -31,7 +31,8 @@ TYPE_BBOX TLD::getInside(const TYPE_BBOX &bb) {
     int brx = min(nextImg.cols, bb.br().x), bry = min(nextImg.rows, bb.br().y);
     Rect retBB(tlx, tly, brx - tlx, bry - tly);
     
-    if(retBB.area() <= 0) retBB = BB_ERROR;
+    if(retBB.area() <= 0)
+        retBB = BB_ERROR;
     return retBB;
 }
 
@@ -108,7 +109,6 @@ int TLD::cluster() {
 }
 
 int TLD::track() {
-    //track
     tracker = new MedianFlow(prevImg, nextImg);
     
     int trackerStatus;
@@ -138,7 +138,6 @@ int TLD::track() {
         trainValid = false;
     } else {
         int value = trackerRetInside.Sr > max(0.7f, detector.getNNThPos());
-        
         trainValid |= value;
     }
     

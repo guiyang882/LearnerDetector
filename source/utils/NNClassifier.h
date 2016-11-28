@@ -13,8 +13,7 @@
 using namespace std;
 using namespace cv;
 
-class NNClassifier
-{
+class NNClassifier {
 private:
     //save positive patches and negative patches in [1 x (patchSize ^ 2)] with type CV_32F
     vector<Mat> pPatches, nPatches;

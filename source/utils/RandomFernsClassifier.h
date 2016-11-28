@@ -13,56 +13,47 @@
 using namespace std;
 using namespace cv;
 
-class LeafCounter
-{
+class LeafCounter {
     int p, n;
     float posteriors;
     
 public:
-    LeafCounter()
-    {
+    LeafCounter() {
         p = n = 0;
         posteriors = 0.f;
     }
     
-    void voteP()
-    {
+    void voteP() {
         p++;
         posteriors = (float)p / (p + n);
     }
     
-    void voteN()
-    {
+    void voteN() {
         n++;
         posteriors = (float)p / (p + n);
     }
     
-    float getPosteriors()
-    {
+    float getPosteriors() {
         return posteriors;
     }
 };
 
 typedef vector<LeafCounter> FernCounter;
 
-class CmpPt
-{
+class CmpPt {
     int p1x, p1y, p2x, p2y;
     
 public:
-    CmpPt(int _p1x, int _p1y, int _p2x, int _p2y)
-    {
+    CmpPt(int _p1x, int _p1y, int _p2x, int _p2y) {
         p1x = _p1x; p1y = _p1y; p2x = _p2x; p2y = _p2y;
     }
     
-    void get(int &_p1x, int &_p1y, int &_p2x, int &_p2y)
-    {
+    void get(int &_p1x, int &_p1y, int &_p2x, int &_p2y) {
         _p1x = p1x; _p1y = p1y; _p2x = p2x; _p2y = p2y;
     }
 };
 
-class RandomFernsClassifier
-{
+class RandomFernsClassifier {
 private:
     float thPos;
     

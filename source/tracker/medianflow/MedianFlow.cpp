@@ -3,13 +3,11 @@
 
 #include "MedianFlow.h"
 
-MedianFlow::MedianFlow()
-{
+MedianFlow::MedianFlow() {
 
 }
 
-MedianFlow::MedianFlow(const Mat &prevImg, const Mat &nextImg, ViewController *_viewController)
-{
+MedianFlow::MedianFlow(const Mat &prevImg, const Mat &nextImg, ViewController *_viewController) {
     this->prevImg = prevImg;
 
     this->nextImg = nextImg;
@@ -20,8 +18,7 @@ MedianFlow::MedianFlow(const Mat &prevImg, const Mat &nextImg, ViewController *_
     viewController = _viewController;
 }
 
-MedianFlow::~MedianFlow()
-{
+MedianFlow::~MedianFlow() {
     delete opticalFlow;
     opticalFlow = NULL;
     
@@ -29,8 +26,7 @@ MedianFlow::~MedianFlow()
     opticalFlowSwap = NULL;
 }
 
-void MedianFlow::generatePts(const TYPE_MF_BB &_box, vector<TYPE_MF_PT> &ret)
-{
+void MedianFlow::generatePts(const TYPE_MF_BB &_box, vector<TYPE_MF_PT> &ret) {
     TYPE_MF_PT tl(max(0.f, _box.tl().x), max(0.f, _box.tl().y));
     TYPE_MF_PT br(min((float)prevImg.cols, _box.br().x), min((float)prevImg.rows, _box.br().y));
     TYPE_MF_BB box(tl, br);
@@ -42,29 +38,24 @@ void MedianFlow::generatePts(const TYPE_MF_BB &_box, vector<TYPE_MF_PT> &ret)
     
     if(!ret.empty()) ret.clear();
     
-    for(int fx = 0; fx < MF_NPTS; fx++)
-    {
-        for(int fy = 0; fy < MF_NPTS; fy++)
-        {
+    for(int fx = 0; fx < MF_NPTS; fx++) {
+        for(int fy = 0; fy < MF_NPTS; fy++) {
             ret.push_back(TYPE_MF_PT(x0 + fx * stepX, y0 + fy * stepY));
         }
     }
 }
 
-bool MedianFlow::compare(const pair<float, int> &a, const pair<float, int> &b)
 // caution : prefix static can only be specified inside the class definition
-{
+bool MedianFlow::compare(const pair<float, int> &a, const pair<float, int> &b) {
     return a.first < b.first;
 }
 
-bool MedianFlow::isPointInside(const TYPE_MF_PT &pt, const TYPE_MF_COORD alpha)
-{
+bool MedianFlow::isPointInside(const TYPE_MF_PT &pt, const TYPE_MF_COORD alpha) {
     int width = prevImg.cols, height = prevImg.rows;
     return (pt.x >= 0 + alpha) && (pt.y >= 0 + alpha) && (pt.x <= width - alpha) && (pt.y <= height - alpha);
 }
 
-bool MedianFlow::isBoxUsable(const TYPE_MF_BB &rect)
-{
+bool MedianFlow::isBoxUsable(const TYPE_MF_BB &rect) {
     int width = prevImg.cols, height = prevImg.rows;
  
     // bounding box is too large
@@ -83,21 +74,17 @@ bool MedianFlow::isBoxUsable(const TYPE_MF_BB &rect)
     return true;
 }
 
-void MedianFlow::filterOFError(const vector<TYPE_MF_PT> &pts, const vector<uchar> &status, vector<int> &rejected)
-{
-    for(int i = 0; i < pts.size(); i++)
-    {
+void MedianFlow::filterOFError(const vector<TYPE_MF_PT> &pts, const vector<uchar> &status, vector<int> &rejected) {
+    for(int i = 0; i < pts.size(); i++) {
         if(status[i] == 0) rejected[i] |= MF_REJECT_OFERROR;
     }
 }
 
-void MedianFlow::filterFB(const vector<TYPE_MF_PT> &initialPts, const vector<TYPE_MF_PT> &FBPts, vector<int> &rejected)
-{
+void MedianFlow::filterFB(const vector<TYPE_MF_PT> &initialPts, const vector<TYPE_MF_PT> &FBPts, vector<int> &rejected) {
     int size = int(initialPts.size());
     vector<pair<float, int> > V;
     
-    for(int i = 0; i < size; i++)
-    {
+    for(int i = 0; i < size; i++) {
         if(rejected[i] & MF_REJECT_OFERROR) continue;
         
         float dist = norm(Mat(initialPts[i]), Mat(FBPts[i]));
@@ -106,23 +93,18 @@ void MedianFlow::filterFB(const vector<TYPE_MF_PT> &initialPts, const vector<TYP
     
     sort(V.begin(), V.end(), compare);
     
-    for(int i = (int)V.size() / 2; i < V.size(); i++)
-    {
+    for(int i = (int)V.size() / 2; i < V.size(); i++) {
         rejected[V[i].second] |= MF_REJECT_FB;
     }
 }
 
-float MedianFlow::calcNCC(const cv::Mat &img0, const cv::Mat &img1)
-{
-    if(NCC_USE_OPENCV)
-    {
+float MedianFlow::calcNCC(const cv::Mat &img0, const cv::Mat &img1) {
+    if(NCC_USE_OPENCV) {
         Mat nccMat;
         matchTemplate(img0, img1, nccMat, CV_TM_CCORR_NORMED);
         
         return nccMat.at<float>(0);
-    }
-    else
-    {
+    } else {
         Mat v0, v1; // convert image to 1 dimension vector
         
         img0.convertTo(v0, CV_32F);
@@ -148,13 +130,11 @@ float MedianFlow::calcNCC(const cv::Mat &img0, const cv::Mat &img1)
     }
 }
 
-void MedianFlow::filterNCC(const vector<TYPE_MF_PT> &initialPts, const vector<TYPE_MF_PT> &FPts, vector<int> &rejected)
-{
+void MedianFlow::filterNCC(const vector<TYPE_MF_PT> &initialPts, const vector<TYPE_MF_PT> &FPts, vector<int> &rejected) {
     int size = int(initialPts.size());
     vector<pair<float, int> > V;
     
-    for(int i = 0; i < size; i++)
-    {
+    for(int i = 0; i < size; i++) {
         if(rejected[i] & MF_REJECT_OFERROR) continue;
         
         if(!isPointInside(initialPts[i], MF_HALF_PATCH_SIZE)) continue;
@@ -175,28 +155,29 @@ void MedianFlow::filterNCC(const vector<TYPE_MF_PT> &initialPts, const vector<TY
     
     sort(V.begin(), V.end(), compare);
     
-    for(int i = int(V.size()) / 2; i < V.size(); i++)
-    {
+    for(int i = int(V.size()) / 2; i < V.size(); i++) {
         rejected[V[i].second] |= MF_REJECT_NCC;
     }
 }
 
-TYPE_MF_BB MedianFlow::calcRect(const TYPE_MF_BB &rect, const vector<TYPE_MF_PT> &pts, const vector<TYPE_MF_PT> &FPts, const vector<TYPE_MF_PT> &FBPts, const vector<int> &rejected, int &status)
-{
+TYPE_MF_BB MedianFlow::calcRect(const TYPE_MF_BB &rect,
+                                const vector<TYPE_MF_PT> &pts,
+                                const vector<TYPE_MF_PT> &FPts,
+                                const vector<TYPE_MF_PT> &FBPts,
+                                const vector<int> &rejected,
+                                int &status) {
     const int size = int(pts.size());
     
     vector<TYPE_MF_COORD> dxs, dys;
     
-    for(int i = 0; i < size; i++)
-    {
+    for(int i = 0; i < size; i++) {
         if(rejected[i]) continue;
         
         dxs.push_back(FPts[i].x - pts[i].x);
         dys.push_back(FPts[i].y - pts[i].y);
     }
     
-    if(dxs.size() <= 1)
-    {
+    if(dxs.size() <= 1) {
         status = MF_TRACK_F_PTS;
         return BB_ERROR;
     }
@@ -211,12 +192,10 @@ TYPE_MF_BB MedianFlow::calcRect(const TYPE_MF_BB &rect, const vector<TYPE_MF_PT>
     vector<float> ratios;
     vector<float> absDist;
     
-    for(int i = 0; i < size; i++)
-    {
+    for(int i = 0; i < size; i++) {
         if(rejected[i]) continue;
         
-        for(int j = i + 1; j < size; j++)
-        {
+        for(int j = i + 1; j < size; j++) {
             if(rejected[j]) continue;
             
             float dist0 = norm(Mat(pts[i]), Mat(pts[j]));
@@ -238,8 +217,7 @@ TYPE_MF_BB MedianFlow::calcRect(const TYPE_MF_BB &rect, const vector<TYPE_MF_PT>
     
     ret = TYPE_MF_BB(tl, br);
     
-    for(int i = 0; i < size; i++)
-    {
+    for(int i = 0; i < size; i++) {
         if(rejected[i] == MF_REJECT_OFERROR) continue;
         
         float dist = norm(Mat(pts[i]), Mat(FBPts[i]));
@@ -250,22 +228,20 @@ TYPE_MF_BB MedianFlow::calcRect(const TYPE_MF_BB &rect, const vector<TYPE_MF_PT>
     sort(absDist.begin(), absDist.end());
     
     float medianAbsDist = absDist[(int)absDist.size() / 2];
-    
-    for(auto &i : absDist) //caution : must add '&'
-    {
+
+    //caution : must add '&'
+    for(auto &i : absDist) {
         i = abs(i - medianAbsDist);
     }
     
     sort(absDist.begin(), absDist.end());
 
-    if(medianAbsDist > MF_FB_ERROR_DIST)
-    {
+    if(medianAbsDist > MF_FB_ERROR_DIST) {
         status = MF_TRACK_F_CONFUSION;
         return BB_ERROR;
     }
     
-    if(!isBoxUsable(ret))
-    {
+    if(!isBoxUsable(ret)) {
         status = MF_TRACK_F_BOX;
         return BB_ERROR;
     }
@@ -274,10 +250,8 @@ TYPE_MF_BB MedianFlow::calcRect(const TYPE_MF_BB &rect, const vector<TYPE_MF_PT>
     return ret;
 }
 
-TYPE_MF_BB MedianFlow::trackBox(const TYPE_MF_BB &inputBox, int &status)
-{
-    if(!isBoxUsable(inputBox))
-    {
+TYPE_MF_BB MedianFlow::trackBox(const TYPE_MF_BB &inputBox, int &status) {
+    if(!isBoxUsable(inputBox)) {
         status = MF_TRACK_F_BOX;
         return BB_ERROR;
     }
@@ -305,8 +279,7 @@ TYPE_MF_BB MedianFlow::trackBox(const TYPE_MF_BB &inputBox, int &status)
     
     ret = calcRect(inputBox, pts, retF, retFB, rejected, status);
     
-    if(status != MF_TRACK_SUCCESS)
-    {
+    if(status != MF_TRACK_SUCCESS) {
         return BB_ERROR;
     }
     

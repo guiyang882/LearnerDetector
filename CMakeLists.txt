@@ -13,10 +13,10 @@ set(SOURCE_FILES
     source/detector/Detector.h
     source/learner/Learner.cpp
     source/learner/Learner.h
-    source/tracker/MedianFlow/MedianFlow.cpp
-    source/tracker/MedianFlow/MedianFlow.h
-    source/tracker/MedianFlow/OpticalFlow.cpp
-    source/tracker/MedianFlow/OpticalFlow.h
+    source/tracker/medianflow/Medianflow.cpp
+    source/tracker/medianflow/Medianflow.h
+    source/tracker/medianflow/OpticalFlow.cpp
+    source/tracker/medianflow/OpticalFlow.h
     source/video/VideoController.cpp
     source/video/VideoController.h
     source/video/ViewController.cpp

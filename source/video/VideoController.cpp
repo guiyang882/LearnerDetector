@@ -79,13 +79,11 @@ Size VideoController::frameSize()
     return _frameSize;
 }
 
-int VideoController::frameNumber()
-{
+int VideoController::frameNumber() {
     return frame;
 }
 
-void VideoController::jumpToFrameNum(int num)
-{
+void VideoController::jumpToFrameNum(int num) {
     while(frameNumber() < num)
         readNextFrame();
 }

@@ -22,6 +22,7 @@ using namespace cv;
 
 class Detector {
     friend class Learner;
+
 private:
     RandomFernsClassifier rFClassifier;
     NNClassifier nNClassifier;
@@ -52,12 +53,12 @@ private:
     
 public:
     Detector(){}
+    ~Detector();
+
     void init(const Mat &img, const Mat &imgB, const Mat &img32F, const Rect &patternBB);
     void dectect(const Mat &img, const Mat &imgB, const Mat &img32F, TYPE_DETECTOR_RET &ret);
     void updataNNPara(const Mat &img32F, TYPE_DETECTOR_SCANBB &sbb);
     float getNNThPos();
-    
-    ~Detector();
 };
 
 #endif /* defined(__TLD__Detector__) */

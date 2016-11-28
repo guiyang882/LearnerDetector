@@ -108,16 +108,16 @@
 		<Unit filename="/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/main.cpp">
 			<Option target="TLD"/>
 		</Unit>
-		<Unit filename="/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/MedianFlow/MedianFlow.cpp">
+		<Unit filename="/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/medianflow/Medianflow.cpp">
 			<Option target="TLD"/>
 		</Unit>
-		<Unit filename="/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/MedianFlow/MedianFlow.h">
+		<Unit filename="/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/medianflow/Medianflow.h">
 			<Option target="TLD"/>
 		</Unit>
-		<Unit filename="/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/MedianFlow/OpticalFlow.cpp">
+		<Unit filename="/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/medianflow/OpticalFlow.cpp">
 			<Option target="TLD"/>
 		</Unit>
-		<Unit filename="/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/MedianFlow/OpticalFlow.h">
+		<Unit filename="/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/medianflow/OpticalFlow.h">
 			<Option target="TLD"/>
 		</Unit>
 		<Unit filename="/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/utils/NNClassifier.cpp">

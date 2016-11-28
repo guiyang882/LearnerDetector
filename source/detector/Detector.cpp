@@ -5,10 +5,7 @@
 #include "Detector.h"
 
 
-void Detector::init(const Mat &img, const Mat &imgB, const Mat &img32F, const Rect &_patternBB)
-{
-    // assert : img.type() == CV_8U
-    
+void Detector::init(const Mat &img, const Mat &imgB, const Mat &img32F, const Rect &_patternBB) {
     patternBB = _patternBB;
     
     imgW = img.cols;

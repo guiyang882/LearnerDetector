@@ -19,8 +19,8 @@ opencv2/opencv.hpp
 -
 algorithm
 -
-tracker/MedianFlow/MedianFlow.h
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/MedianFlow/MedianFlow.h
+tracker/medianflow/MedianFlow.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/medianflow/MedianFlow.h
 detector/Detector.h
 /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/detector/Detector.h
 learner/Learner.h
@@ -92,27 +92,27 @@ TLD.h
 TLDSystemStruct.h
 /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/TLDSystemStruct.h
 
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/MedianFlow/MedianFlow.cpp
-MedianFlow.h
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/MedianFlow/MedianFlow.h
-
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/MedianFlow/MedianFlow.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/medianflow/MedianFlow.h
 cmath
 -
 iostream
 -
 OpticalFlow.h
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/MedianFlow/OpticalFlow.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/medianflow/OpticalFlow.h
 ../../TLDSystemStruct.h
 /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/TLDSystemStruct.h
 ../../video/ViewController.h
 /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/video/ViewController.h
 
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/MedianFlow/OpticalFlow.cpp
-OpticalFlow.h
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/MedianFlow/OpticalFlow.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/medianflow/Medianflow.cpp
+MedianFlow.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/medianflow/MedianFlow.h
 
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/MedianFlow/OpticalFlow.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/medianflow/OpticalFlow.cpp
+OpticalFlow.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/medianflow/OpticalFlow.h
+
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/medianflow/OpticalFlow.h
 vector
 -
 iostream

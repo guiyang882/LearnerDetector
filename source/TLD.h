@@ -10,7 +10,7 @@
 #include <opencv2/opencv.hpp>
 #include <algorithm>
 
-#include "tracker/MedianFlow/MedianFlow.h"
+#include "tracker/medianflow/MedianFlow.h"
 #include "detector/Detector.h"
 #include "learner/Learner.h"
 
@@ -39,16 +39,13 @@ private:
     int cluster();
     
 public:
-    
     TLD(const Mat &img, const TYPE_BBOX &bb);
-    
     ~TLD();
     
     void setNextFrame(const Mat &frame);
     int track();
     
     TYPE_BBOX getBB();
-    
 };
 
 #endif /* defined(__TLD__TLD__) */

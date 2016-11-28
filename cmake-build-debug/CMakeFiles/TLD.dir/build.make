@@ -105,52 +105,52 @@ CMakeFiles/TLD.dir/source/learner/Learner.cpp.o.provides: CMakeFiles/TLD.dir/sou
 CMakeFiles/TLD.dir/source/learner/Learner.cpp.o.provides.build: CMakeFiles/TLD.dir/source/learner/Learner.cpp.o
 
 
-CMakeFiles/TLD.dir/source/tracker/MedianFlow/MedianFlow.cpp.o: CMakeFiles/TLD.dir/flags.make
-CMakeFiles/TLD.dir/source/tracker/MedianFlow/MedianFlow.cpp.o: ../source/tracker/MedianFlow/MedianFlow.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/TLD.dir/source/tracker/MedianFlow/MedianFlow.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TLD.dir/source/tracker/MedianFlow/MedianFlow.cpp.o -c /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/MedianFlow/MedianFlow.cpp
+CMakeFiles/TLD.dir/source/tracker/medianflow/Medianflow.cpp.o: CMakeFiles/TLD.dir/flags.make
+CMakeFiles/TLD.dir/source/tracker/medianflow/Medianflow.cpp.o: ../source/tracker/medianflow/Medianflow.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/TLD.dir/source/tracker/medianflow/Medianflow.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TLD.dir/source/tracker/medianflow/Medianflow.cpp.o -c /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/medianflow/Medianflow.cpp
 
-CMakeFiles/TLD.dir/source/tracker/MedianFlow/MedianFlow.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TLD.dir/source/tracker/MedianFlow/MedianFlow.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/MedianFlow/MedianFlow.cpp > CMakeFiles/TLD.dir/source/tracker/MedianFlow/MedianFlow.cpp.i
+CMakeFiles/TLD.dir/source/tracker/medianflow/Medianflow.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TLD.dir/source/tracker/medianflow/Medianflow.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/medianflow/Medianflow.cpp > CMakeFiles/TLD.dir/source/tracker/medianflow/Medianflow.cpp.i
 
-CMakeFiles/TLD.dir/source/tracker/MedianFlow/MedianFlow.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TLD.dir/source/tracker/MedianFlow/MedianFlow.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/MedianFlow/MedianFlow.cpp -o CMakeFiles/TLD.dir/source/tracker/MedianFlow/MedianFlow.cpp.s
+CMakeFiles/TLD.dir/source/tracker/medianflow/Medianflow.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TLD.dir/source/tracker/medianflow/Medianflow.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/medianflow/Medianflow.cpp -o CMakeFiles/TLD.dir/source/tracker/medianflow/Medianflow.cpp.s
 
-CMakeFiles/TLD.dir/source/tracker/MedianFlow/MedianFlow.cpp.o.requires:
+CMakeFiles/TLD.dir/source/tracker/medianflow/Medianflow.cpp.o.requires:
 
-.PHONY : CMakeFiles/TLD.dir/source/tracker/MedianFlow/MedianFlow.cpp.o.requires
+.PHONY : CMakeFiles/TLD.dir/source/tracker/medianflow/Medianflow.cpp.o.requires
 
-CMakeFiles/TLD.dir/source/tracker/MedianFlow/MedianFlow.cpp.o.provides: CMakeFiles/TLD.dir/source/tracker/MedianFlow/MedianFlow.cpp.o.requires
-	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/tracker/MedianFlow/MedianFlow.cpp.o.provides.build
-.PHONY : CMakeFiles/TLD.dir/source/tracker/MedianFlow/MedianFlow.cpp.o.provides
+CMakeFiles/TLD.dir/source/tracker/medianflow/Medianflow.cpp.o.provides: CMakeFiles/TLD.dir/source/tracker/medianflow/Medianflow.cpp.o.requires
+	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/tracker/medianflow/Medianflow.cpp.o.provides.build
+.PHONY : CMakeFiles/TLD.dir/source/tracker/medianflow/Medianflow.cpp.o.provides
 
-CMakeFiles/TLD.dir/source/tracker/MedianFlow/MedianFlow.cpp.o.provides.build: CMakeFiles/TLD.dir/source/tracker/MedianFlow/MedianFlow.cpp.o
+CMakeFiles/TLD.dir/source/tracker/medianflow/Medianflow.cpp.o.provides.build: CMakeFiles/TLD.dir/source/tracker/medianflow/Medianflow.cpp.o
 
 
-CMakeFiles/TLD.dir/source/tracker/MedianFlow/OpticalFlow.cpp.o: CMakeFiles/TLD.dir/flags.make
-CMakeFiles/TLD.dir/source/tracker/MedianFlow/OpticalFlow.cpp.o: ../source/tracker/MedianFlow/OpticalFlow.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/TLD.dir/source/tracker/MedianFlow/OpticalFlow.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TLD.dir/source/tracker/MedianFlow/OpticalFlow.cpp.o -c /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/MedianFlow/OpticalFlow.cpp
+CMakeFiles/TLD.dir/source/tracker/medianflow/OpticalFlow.cpp.o: CMakeFiles/TLD.dir/flags.make
+CMakeFiles/TLD.dir/source/tracker/medianflow/OpticalFlow.cpp.o: ../source/tracker/medianflow/OpticalFlow.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/TLD.dir/source/tracker/medianflow/OpticalFlow.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TLD.dir/source/tracker/medianflow/OpticalFlow.cpp.o -c /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/medianflow/OpticalFlow.cpp
 
-CMakeFiles/TLD.dir/source/tracker/MedianFlow/OpticalFlow.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TLD.dir/source/tracker/MedianFlow/OpticalFlow.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/MedianFlow/OpticalFlow.cpp > CMakeFiles/TLD.dir/source/tracker/MedianFlow/OpticalFlow.cpp.i
+CMakeFiles/TLD.dir/source/tracker/medianflow/OpticalFlow.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TLD.dir/source/tracker/medianflow/OpticalFlow.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/medianflow/OpticalFlow.cpp > CMakeFiles/TLD.dir/source/tracker/medianflow/OpticalFlow.cpp.i
 
-CMakeFiles/TLD.dir/source/tracker/MedianFlow/OpticalFlow.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TLD.dir/source/tracker/MedianFlow/OpticalFlow.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/MedianFlow/OpticalFlow.cpp -o CMakeFiles/TLD.dir/source/tracker/MedianFlow/OpticalFlow.cpp.s
+CMakeFiles/TLD.dir/source/tracker/medianflow/OpticalFlow.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TLD.dir/source/tracker/medianflow/OpticalFlow.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/medianflow/OpticalFlow.cpp -o CMakeFiles/TLD.dir/source/tracker/medianflow/OpticalFlow.cpp.s
 
-CMakeFiles/TLD.dir/source/tracker/MedianFlow/OpticalFlow.cpp.o.requires:
+CMakeFiles/TLD.dir/source/tracker/medianflow/OpticalFlow.cpp.o.requires:
 
-.PHONY : CMakeFiles/TLD.dir/source/tracker/MedianFlow/OpticalFlow.cpp.o.requires
+.PHONY : CMakeFiles/TLD.dir/source/tracker/medianflow/OpticalFlow.cpp.o.requires
 
-CMakeFiles/TLD.dir/source/tracker/MedianFlow/OpticalFlow.cpp.o.provides: CMakeFiles/TLD.dir/source/tracker/MedianFlow/OpticalFlow.cpp.o.requires
-	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/tracker/MedianFlow/OpticalFlow.cpp.o.provides.build
-.PHONY : CMakeFiles/TLD.dir/source/tracker/MedianFlow/OpticalFlow.cpp.o.provides
+CMakeFiles/TLD.dir/source/tracker/medianflow/OpticalFlow.cpp.o.provides: CMakeFiles/TLD.dir/source/tracker/medianflow/OpticalFlow.cpp.o.requires
+	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/tracker/medianflow/OpticalFlow.cpp.o.provides.build
+.PHONY : CMakeFiles/TLD.dir/source/tracker/medianflow/OpticalFlow.cpp.o.provides
 
-CMakeFiles/TLD.dir/source/tracker/MedianFlow/OpticalFlow.cpp.o.provides.build: CMakeFiles/TLD.dir/source/tracker/MedianFlow/OpticalFlow.cpp.o
+CMakeFiles/TLD.dir/source/tracker/medianflow/OpticalFlow.cpp.o.provides.build: CMakeFiles/TLD.dir/source/tracker/medianflow/OpticalFlow.cpp.o
 
 
 CMakeFiles/TLD.dir/source/video/VideoController.cpp.o: CMakeFiles/TLD.dir/flags.make
@@ -325,8 +325,8 @@ CMakeFiles/TLD.dir/source/TLD.cpp.o.provides.build: CMakeFiles/TLD.dir/source/TL
 TLD_OBJECTS = \
 "CMakeFiles/TLD.dir/source/detector/Detector.cpp.o" \
 "CMakeFiles/TLD.dir/source/learner/Learner.cpp.o" \
-"CMakeFiles/TLD.dir/source/tracker/MedianFlow/MedianFlow.cpp.o" \
-"CMakeFiles/TLD.dir/source/tracker/MedianFlow/OpticalFlow.cpp.o" \
+"CMakeFiles/TLD.dir/source/tracker/medianflow/Medianflow.cpp.o" \
+"CMakeFiles/TLD.dir/source/tracker/medianflow/OpticalFlow.cpp.o" \
 "CMakeFiles/TLD.dir/source/video/VideoController.cpp.o" \
 "CMakeFiles/TLD.dir/source/video/ViewController.cpp.o" \
 "CMakeFiles/TLD.dir/source/utils/NNClassifier.cpp.o" \
@@ -340,8 +340,8 @@ TLD_EXTERNAL_OBJECTS =
 
 TLD: CMakeFiles/TLD.dir/source/detector/Detector.cpp.o
 TLD: CMakeFiles/TLD.dir/source/learner/Learner.cpp.o
-TLD: CMakeFiles/TLD.dir/source/tracker/MedianFlow/MedianFlow.cpp.o
-TLD: CMakeFiles/TLD.dir/source/tracker/MedianFlow/OpticalFlow.cpp.o
+TLD: CMakeFiles/TLD.dir/source/tracker/medianflow/Medianflow.cpp.o
+TLD: CMakeFiles/TLD.dir/source/tracker/medianflow/OpticalFlow.cpp.o
 TLD: CMakeFiles/TLD.dir/source/video/VideoController.cpp.o
 TLD: CMakeFiles/TLD.dir/source/video/ViewController.cpp.o
 TLD: CMakeFiles/TLD.dir/source/utils/NNClassifier.cpp.o
@@ -380,8 +380,8 @@ CMakeFiles/TLD.dir/build: TLD
 
 CMakeFiles/TLD.dir/requires: CMakeFiles/TLD.dir/source/detector/Detector.cpp.o.requires
 CMakeFiles/TLD.dir/requires: CMakeFiles/TLD.dir/source/learner/Learner.cpp.o.requires
-CMakeFiles/TLD.dir/requires: CMakeFiles/TLD.dir/source/tracker/MedianFlow/MedianFlow.cpp.o.requires
-CMakeFiles/TLD.dir/requires: CMakeFiles/TLD.dir/source/tracker/MedianFlow/OpticalFlow.cpp.o.requires
+CMakeFiles/TLD.dir/requires: CMakeFiles/TLD.dir/source/tracker/medianflow/Medianflow.cpp.o.requires
+CMakeFiles/TLD.dir/requires: CMakeFiles/TLD.dir/source/tracker/medianflow/OpticalFlow.cpp.o.requires
 CMakeFiles/TLD.dir/requires: CMakeFiles/TLD.dir/source/video/VideoController.cpp.o.requires
 CMakeFiles/TLD.dir/requires: CMakeFiles/TLD.dir/source/video/ViewController.cpp.o.requires
 CMakeFiles/TLD.dir/requires: CMakeFiles/TLD.dir/source/utils/NNClassifier.cpp.o.requires

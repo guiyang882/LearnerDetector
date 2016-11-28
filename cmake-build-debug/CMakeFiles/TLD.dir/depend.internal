@@ -7,8 +7,8 @@ CMakeFiles/TLD.dir/source/TLD.cpp.o
  /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/TLDSystemStruct.h
  /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/detector/Detector.h
  /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/learner/Learner.h
- /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/MedianFlow/MedianFlow.h
- /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/MedianFlow/OpticalFlow.h
+ /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/medianflow/MedianFlow.h
+ /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/medianflow/OpticalFlow.h
  /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/utils/NNClassifier.h
  /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/utils/RandomFernsClassifier.h
  /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/utils/VarClassifier.h
@@ -126,8 +126,8 @@ CMakeFiles/TLD.dir/source/main.cpp.o
  /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/detector/Detector.h
  /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/learner/Learner.h
  /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/main.cpp
- /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/MedianFlow/MedianFlow.h
- /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/MedianFlow/OpticalFlow.h
+ /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/medianflow/MedianFlow.h
+ /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/medianflow/OpticalFlow.h
  /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/utils/NNClassifier.h
  /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/utils/RandomFernsClassifier.h
  /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/utils/VarClassifier.h
@@ -163,11 +163,11 @@ CMakeFiles/TLD.dir/source/main.cpp.o
  /usr/local/Cellar/opencv/2.4.13/include/opencv2/video/background_segm.hpp
  /usr/local/Cellar/opencv/2.4.13/include/opencv2/video/tracking.hpp
  /usr/local/Cellar/opencv/2.4.13/include/opencv2/video/video.hpp
-CMakeFiles/TLD.dir/source/tracker/MedianFlow/MedianFlow.cpp.o
+CMakeFiles/TLD.dir/source/tracker/medianflow/Medianflow.cpp.o
  /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/TLDSystemStruct.h
- /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/MedianFlow/MedianFlow.cpp
- /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/MedianFlow/MedianFlow.h
- /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/MedianFlow/OpticalFlow.h
+ /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/medianflow/MedianFlow.h
+ /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/medianflow/Medianflow.cpp
+ /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/medianflow/OpticalFlow.h
  /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/video/VideoController.h
  /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/video/ViewController.h
  /usr/local/Cellar/opencv/2.4.13/include/opencv2/calib3d/calib3d.hpp
@@ -199,10 +199,10 @@ CMakeFiles/TLD.dir/source/tracker/MedianFlow/MedianFlow.cpp.o
  /usr/local/Cellar/opencv/2.4.13/include/opencv2/video/background_segm.hpp
  /usr/local/Cellar/opencv/2.4.13/include/opencv2/video/tracking.hpp
  /usr/local/Cellar/opencv/2.4.13/include/opencv2/video/video.hpp
-CMakeFiles/TLD.dir/source/tracker/MedianFlow/OpticalFlow.cpp.o
+CMakeFiles/TLD.dir/source/tracker/medianflow/OpticalFlow.cpp.o
  /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/TLDSystemStruct.h
- /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/MedianFlow/OpticalFlow.cpp
- /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/MedianFlow/OpticalFlow.h
+ /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/medianflow/OpticalFlow.cpp
+ /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/medianflow/OpticalFlow.h
  /usr/local/Cellar/opencv/2.4.13/include/opencv2/calib3d/calib3d.hpp
  /usr/local/Cellar/opencv/2.4.13/include/opencv2/contrib/contrib.hpp
  /usr/local/Cellar/opencv/2.4.13/include/opencv2/contrib/openfabmap.hpp

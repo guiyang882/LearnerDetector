@@ -231,59 +231,59 @@ source/main.cpp.s:
 	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/main.cpp.s
 .PHONY : source/main.cpp.s
 
-source/tracker/MedianFlow/MedianFlow.o: source/tracker/MedianFlow/MedianFlow.cpp.o
+source/tracker/medianflow/Medianflow.o: source/tracker/medianflow/Medianflow.cpp.o
 
-.PHONY : source/tracker/MedianFlow/MedianFlow.o
-
-# target to build an object file
-source/tracker/MedianFlow/MedianFlow.cpp.o:
-	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/tracker/MedianFlow/MedianFlow.cpp.o
-.PHONY : source/tracker/MedianFlow/MedianFlow.cpp.o
-
-source/tracker/MedianFlow/MedianFlow.i: source/tracker/MedianFlow/MedianFlow.cpp.i
-
-.PHONY : source/tracker/MedianFlow/MedianFlow.i
-
-# target to preprocess a source file
-source/tracker/MedianFlow/MedianFlow.cpp.i:
-	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/tracker/MedianFlow/MedianFlow.cpp.i
-.PHONY : source/tracker/MedianFlow/MedianFlow.cpp.i
-
-source/tracker/MedianFlow/MedianFlow.s: source/tracker/MedianFlow/MedianFlow.cpp.s
-
-.PHONY : source/tracker/MedianFlow/MedianFlow.s
-
-# target to generate assembly for a file
-source/tracker/MedianFlow/MedianFlow.cpp.s:
-	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/tracker/MedianFlow/MedianFlow.cpp.s
-.PHONY : source/tracker/MedianFlow/MedianFlow.cpp.s
-
-source/tracker/MedianFlow/OpticalFlow.o: source/tracker/MedianFlow/OpticalFlow.cpp.o
-
-.PHONY : source/tracker/MedianFlow/OpticalFlow.o
+.PHONY : source/tracker/medianflow/Medianflow.o
 
 # target to build an object file
-source/tracker/MedianFlow/OpticalFlow.cpp.o:
-	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/tracker/MedianFlow/OpticalFlow.cpp.o
-.PHONY : source/tracker/MedianFlow/OpticalFlow.cpp.o
+source/tracker/medianflow/Medianflow.cpp.o:
+	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/tracker/medianflow/Medianflow.cpp.o
+.PHONY : source/tracker/medianflow/Medianflow.cpp.o
 
-source/tracker/MedianFlow/OpticalFlow.i: source/tracker/MedianFlow/OpticalFlow.cpp.i
+source/tracker/medianflow/Medianflow.i: source/tracker/medianflow/Medianflow.cpp.i
 
-.PHONY : source/tracker/MedianFlow/OpticalFlow.i
+.PHONY : source/tracker/medianflow/Medianflow.i
 
 # target to preprocess a source file
-source/tracker/MedianFlow/OpticalFlow.cpp.i:
-	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/tracker/MedianFlow/OpticalFlow.cpp.i
-.PHONY : source/tracker/MedianFlow/OpticalFlow.cpp.i
+source/tracker/medianflow/Medianflow.cpp.i:
+	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/tracker/medianflow/Medianflow.cpp.i
+.PHONY : source/tracker/medianflow/Medianflow.cpp.i
 
-source/tracker/MedianFlow/OpticalFlow.s: source/tracker/MedianFlow/OpticalFlow.cpp.s
+source/tracker/medianflow/Medianflow.s: source/tracker/medianflow/Medianflow.cpp.s
 
-.PHONY : source/tracker/MedianFlow/OpticalFlow.s
+.PHONY : source/tracker/medianflow/Medianflow.s
 
 # target to generate assembly for a file
-source/tracker/MedianFlow/OpticalFlow.cpp.s:
-	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/tracker/MedianFlow/OpticalFlow.cpp.s
-.PHONY : source/tracker/MedianFlow/OpticalFlow.cpp.s
+source/tracker/medianflow/Medianflow.cpp.s:
+	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/tracker/medianflow/Medianflow.cpp.s
+.PHONY : source/tracker/medianflow/Medianflow.cpp.s
+
+source/tracker/medianflow/OpticalFlow.o: source/tracker/medianflow/OpticalFlow.cpp.o
+
+.PHONY : source/tracker/medianflow/OpticalFlow.o
+
+# target to build an object file
+source/tracker/medianflow/OpticalFlow.cpp.o:
+	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/tracker/medianflow/OpticalFlow.cpp.o
+.PHONY : source/tracker/medianflow/OpticalFlow.cpp.o
+
+source/tracker/medianflow/OpticalFlow.i: source/tracker/medianflow/OpticalFlow.cpp.i
+
+.PHONY : source/tracker/medianflow/OpticalFlow.i
+
+# target to preprocess a source file
+source/tracker/medianflow/OpticalFlow.cpp.i:
+	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/tracker/medianflow/OpticalFlow.cpp.i
+.PHONY : source/tracker/medianflow/OpticalFlow.cpp.i
+
+source/tracker/medianflow/OpticalFlow.s: source/tracker/medianflow/OpticalFlow.cpp.s
+
+.PHONY : source/tracker/medianflow/OpticalFlow.s
+
+# target to generate assembly for a file
+source/tracker/medianflow/OpticalFlow.cpp.s:
+	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/tracker/medianflow/OpticalFlow.cpp.s
+.PHONY : source/tracker/medianflow/OpticalFlow.cpp.s
 
 source/utils/NNClassifier.o: source/utils/NNClassifier.cpp.o
 
@@ -441,12 +441,12 @@ help:
 	@echo "... source/main.o"
 	@echo "... source/main.i"
 	@echo "... source/main.s"
-	@echo "... source/tracker/MedianFlow/MedianFlow.o"
-	@echo "... source/tracker/MedianFlow/MedianFlow.i"
-	@echo "... source/tracker/MedianFlow/MedianFlow.s"
-	@echo "... source/tracker/MedianFlow/OpticalFlow.o"
-	@echo "... source/tracker/MedianFlow/OpticalFlow.i"
-	@echo "... source/tracker/MedianFlow/OpticalFlow.s"
+	@echo "... source/tracker/medianflow/Medianflow.o"
+	@echo "... source/tracker/medianflow/Medianflow.i"
+	@echo "... source/tracker/medianflow/Medianflow.s"
+	@echo "... source/tracker/medianflow/OpticalFlow.o"
+	@echo "... source/tracker/medianflow/OpticalFlow.i"
+	@echo "... source/tracker/medianflow/OpticalFlow.s"
 	@echo "... source/utils/NNClassifier.o"
 	@echo "... source/utils/NNClassifier.i"
 	@echo "... source/utils/NNClassifier.s"
