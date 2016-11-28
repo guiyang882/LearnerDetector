@@ -120,18 +120,6 @@
 		<Unit filename="/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/MedianFlow/OpticalFlow.h">
 			<Option target="TLD"/>
 		</Unit>
-		<Unit filename="/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/MedianFlow/VideoController.cpp">
-			<Option target="TLD"/>
-		</Unit>
-		<Unit filename="/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/MedianFlow/VideoController.h">
-			<Option target="TLD"/>
-		</Unit>
-		<Unit filename="/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/MedianFlow/ViewController.cpp">
-			<Option target="TLD"/>
-		</Unit>
-		<Unit filename="/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/MedianFlow/ViewController.h">
-			<Option target="TLD"/>
-		</Unit>
 		<Unit filename="/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/utils/NNClassifier.cpp">
 			<Option target="TLD"/>
 		</Unit>
@@ -148,6 +136,18 @@
 			<Option target="TLD"/>
 		</Unit>
 		<Unit filename="/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/utils/VarClassifier.h">
+			<Option target="TLD"/>
+		</Unit>
+		<Unit filename="/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/video/VideoController.cpp">
+			<Option target="TLD"/>
+		</Unit>
+		<Unit filename="/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/video/VideoController.h">
+			<Option target="TLD"/>
+		</Unit>
+		<Unit filename="/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/video/ViewController.cpp">
+			<Option target="TLD"/>
+		</Unit>
+		<Unit filename="/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/video/ViewController.h">
 			<Option target="TLD"/>
 		</Unit>
 		<Unit filename="/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/CMakeLists.txt">

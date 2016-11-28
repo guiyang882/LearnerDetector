@@ -14,7 +14,7 @@
 #include <opencv2/opencv.hpp>
 
 #include "VideoController.h"
-#include "../../TLDSystemStruct.h"
+#include "../TLDSystemStruct.h"
 
 using namespace std;
 using namespace cv;

@@ -1,31 +1,25 @@
 //
 //  MedianFlow.h
 //  MedianFlow
-//
-//  Created by 陈裕昕 on 10/29/14.
-//  Copyright (c) 2014 陈裕昕. All rights reserved.
-//
 
 #ifndef __MedianFlow__MedianFlow__
 #define __MedianFlow__MedianFlow__
 
 
-#include "../../TLDSystemStruct.h"
 
 #include <cmath>
 #include <iostream>
 
 #include "OpticalFlow.h"
+#include "../../TLDSystemStruct.h"
 
 // show result
-#include "ViewController.h"
-//
+#include "../../video/ViewController.h"
 
 using namespace std;
 using namespace cv;
 
-class MedianFlow
-{
+class MedianFlow {
 private:
     Mat prevImg, nextImg;
     

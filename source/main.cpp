@@ -1,15 +1,11 @@
 //
 //  main.cpp
 //  TLD
-//
-//  Created by 陈裕昕 on 11/4/14.
-//  Copyright (c) 2014 Fudan. All rights reserved.
-//
 
 #include <iostream>
 #include <opencv2/opencv.hpp>
-#include "tracker/MedianFlow/ViewController.h"
-#include "tracker/MedianFlow/VideoController.h"
+#include "video/ViewController.h"
+#include "video/VideoController.h"
 #include "utils/RandomFernsClassifier.h"
 #include "utils/NNClassifier.h"
 #include "detector/Detector.h"

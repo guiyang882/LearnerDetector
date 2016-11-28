@@ -285,60 +285,6 @@ source/tracker/MedianFlow/OpticalFlow.cpp.s:
 	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/tracker/MedianFlow/OpticalFlow.cpp.s
 .PHONY : source/tracker/MedianFlow/OpticalFlow.cpp.s
 
-source/tracker/MedianFlow/VideoController.o: source/tracker/MedianFlow/VideoController.cpp.o
-
-.PHONY : source/tracker/MedianFlow/VideoController.o
-
-# target to build an object file
-source/tracker/MedianFlow/VideoController.cpp.o:
-	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/tracker/MedianFlow/VideoController.cpp.o
-.PHONY : source/tracker/MedianFlow/VideoController.cpp.o
-
-source/tracker/MedianFlow/VideoController.i: source/tracker/MedianFlow/VideoController.cpp.i
-
-.PHONY : source/tracker/MedianFlow/VideoController.i
-
-# target to preprocess a source file
-source/tracker/MedianFlow/VideoController.cpp.i:
-	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/tracker/MedianFlow/VideoController.cpp.i
-.PHONY : source/tracker/MedianFlow/VideoController.cpp.i
-
-source/tracker/MedianFlow/VideoController.s: source/tracker/MedianFlow/VideoController.cpp.s
-
-.PHONY : source/tracker/MedianFlow/VideoController.s
-
-# target to generate assembly for a file
-source/tracker/MedianFlow/VideoController.cpp.s:
-	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/tracker/MedianFlow/VideoController.cpp.s
-.PHONY : source/tracker/MedianFlow/VideoController.cpp.s
-
-source/tracker/MedianFlow/ViewController.o: source/tracker/MedianFlow/ViewController.cpp.o
-
-.PHONY : source/tracker/MedianFlow/ViewController.o
-
-# target to build an object file
-source/tracker/MedianFlow/ViewController.cpp.o:
-	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/tracker/MedianFlow/ViewController.cpp.o
-.PHONY : source/tracker/MedianFlow/ViewController.cpp.o
-
-source/tracker/MedianFlow/ViewController.i: source/tracker/MedianFlow/ViewController.cpp.i
-
-.PHONY : source/tracker/MedianFlow/ViewController.i
-
-# target to preprocess a source file
-source/tracker/MedianFlow/ViewController.cpp.i:
-	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/tracker/MedianFlow/ViewController.cpp.i
-.PHONY : source/tracker/MedianFlow/ViewController.cpp.i
-
-source/tracker/MedianFlow/ViewController.s: source/tracker/MedianFlow/ViewController.cpp.s
-
-.PHONY : source/tracker/MedianFlow/ViewController.s
-
-# target to generate assembly for a file
-source/tracker/MedianFlow/ViewController.cpp.s:
-	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/tracker/MedianFlow/ViewController.cpp.s
-.PHONY : source/tracker/MedianFlow/ViewController.cpp.s
-
 source/utils/NNClassifier.o: source/utils/NNClassifier.cpp.o
 
 .PHONY : source/utils/NNClassifier.o
@@ -420,6 +366,60 @@ source/utils/VarClassifier.cpp.s:
 	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/utils/VarClassifier.cpp.s
 .PHONY : source/utils/VarClassifier.cpp.s
 
+source/video/VideoController.o: source/video/VideoController.cpp.o
+
+.PHONY : source/video/VideoController.o
+
+# target to build an object file
+source/video/VideoController.cpp.o:
+	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/video/VideoController.cpp.o
+.PHONY : source/video/VideoController.cpp.o
+
+source/video/VideoController.i: source/video/VideoController.cpp.i
+
+.PHONY : source/video/VideoController.i
+
+# target to preprocess a source file
+source/video/VideoController.cpp.i:
+	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/video/VideoController.cpp.i
+.PHONY : source/video/VideoController.cpp.i
+
+source/video/VideoController.s: source/video/VideoController.cpp.s
+
+.PHONY : source/video/VideoController.s
+
+# target to generate assembly for a file
+source/video/VideoController.cpp.s:
+	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/video/VideoController.cpp.s
+.PHONY : source/video/VideoController.cpp.s
+
+source/video/ViewController.o: source/video/ViewController.cpp.o
+
+.PHONY : source/video/ViewController.o
+
+# target to build an object file
+source/video/ViewController.cpp.o:
+	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/video/ViewController.cpp.o
+.PHONY : source/video/ViewController.cpp.o
+
+source/video/ViewController.i: source/video/ViewController.cpp.i
+
+.PHONY : source/video/ViewController.i
+
+# target to preprocess a source file
+source/video/ViewController.cpp.i:
+	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/video/ViewController.cpp.i
+.PHONY : source/video/ViewController.cpp.i
+
+source/video/ViewController.s: source/video/ViewController.cpp.s
+
+.PHONY : source/video/ViewController.s
+
+# target to generate assembly for a file
+source/video/ViewController.cpp.s:
+	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/video/ViewController.cpp.s
+.PHONY : source/video/ViewController.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -447,12 +447,6 @@ help:
 	@echo "... source/tracker/MedianFlow/OpticalFlow.o"
 	@echo "... source/tracker/MedianFlow/OpticalFlow.i"
 	@echo "... source/tracker/MedianFlow/OpticalFlow.s"
-	@echo "... source/tracker/MedianFlow/VideoController.o"
-	@echo "... source/tracker/MedianFlow/VideoController.i"
-	@echo "... source/tracker/MedianFlow/VideoController.s"
-	@echo "... source/tracker/MedianFlow/ViewController.o"
-	@echo "... source/tracker/MedianFlow/ViewController.i"
-	@echo "... source/tracker/MedianFlow/ViewController.s"
 	@echo "... source/utils/NNClassifier.o"
 	@echo "... source/utils/NNClassifier.i"
 	@echo "... source/utils/NNClassifier.s"
@@ -462,6 +456,12 @@ help:
 	@echo "... source/utils/VarClassifier.o"
 	@echo "... source/utils/VarClassifier.i"
 	@echo "... source/utils/VarClassifier.s"
+	@echo "... source/video/VideoController.o"
+	@echo "... source/video/VideoController.i"
+	@echo "... source/video/VideoController.s"
+	@echo "... source/video/ViewController.o"
+	@echo "... source/video/ViewController.i"
+	@echo "... source/video/ViewController.s"
 .PHONY : help
 
 

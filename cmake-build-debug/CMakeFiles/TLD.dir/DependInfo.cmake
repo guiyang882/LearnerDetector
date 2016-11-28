@@ -10,11 +10,11 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/main.cpp" "/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/cmake-build-debug/CMakeFiles/TLD.dir/source/main.cpp.o"
   "/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/MedianFlow/MedianFlow.cpp" "/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/cmake-build-debug/CMakeFiles/TLD.dir/source/tracker/MedianFlow/MedianFlow.cpp.o"
   "/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/MedianFlow/OpticalFlow.cpp" "/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/cmake-build-debug/CMakeFiles/TLD.dir/source/tracker/MedianFlow/OpticalFlow.cpp.o"
-  "/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/MedianFlow/VideoController.cpp" "/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/cmake-build-debug/CMakeFiles/TLD.dir/source/tracker/MedianFlow/VideoController.cpp.o"
-  "/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/MedianFlow/ViewController.cpp" "/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/cmake-build-debug/CMakeFiles/TLD.dir/source/tracker/MedianFlow/ViewController.cpp.o"
   "/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/utils/NNClassifier.cpp" "/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/cmake-build-debug/CMakeFiles/TLD.dir/source/utils/NNClassifier.cpp.o"
   "/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/utils/RandomFernsClassifier.cpp" "/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/cmake-build-debug/CMakeFiles/TLD.dir/source/utils/RandomFernsClassifier.cpp.o"
   "/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/utils/VarClassifier.cpp" "/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/cmake-build-debug/CMakeFiles/TLD.dir/source/utils/VarClassifier.cpp.o"
+  "/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/video/VideoController.cpp" "/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/cmake-build-debug/CMakeFiles/TLD.dir/source/video/VideoController.cpp.o"
+  "/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/video/ViewController.cpp" "/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/cmake-build-debug/CMakeFiles/TLD.dir/source/video/ViewController.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

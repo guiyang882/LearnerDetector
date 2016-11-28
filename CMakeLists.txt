@@ -17,10 +17,10 @@ set(SOURCE_FILES
     source/tracker/MedianFlow/MedianFlow.h
     source/tracker/MedianFlow/OpticalFlow.cpp
     source/tracker/MedianFlow/OpticalFlow.h
-    source/tracker/MedianFlow/VideoController.cpp
-    source/tracker/MedianFlow/VideoController.h
-    source/tracker/MedianFlow/ViewController.cpp
-    source/tracker/MedianFlow/ViewController.h
+    source/video/VideoController.cpp
+    source/video/VideoController.h
+    source/video/ViewController.cpp
+    source/video/ViewController.h
     source/utils/NNClassifier.cpp
     source/utils/NNClassifier.h
     source/utils/RandomFernsClassifier.cpp
