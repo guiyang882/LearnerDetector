@@ -30,7 +30,7 @@ set(SOURCE_FILES
     source/main.cpp
     source/TLD.cpp
     source/TLD.h
-    source/TLDSystemStruct.h)
+    source/TLDSystemStruct.h source/tracker/TrackerInstance.cpp source/tracker/TrackerInstance.h source/tracker/TrackerBase.cpp source/tracker/TrackerBase.h)
 
 add_executable(TLD ${SOURCE_FILES})
 target_link_libraries(TLD ${OpenCV_LIBS})

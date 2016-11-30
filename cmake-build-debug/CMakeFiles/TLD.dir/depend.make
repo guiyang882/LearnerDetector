@@ -163,6 +163,44 @@ CMakeFiles/TLD.dir/source/main.cpp.o: /usr/local/Cellar/opencv/2.4.13/include/op
 CMakeFiles/TLD.dir/source/main.cpp.o: /usr/local/Cellar/opencv/2.4.13/include/opencv2/video/tracking.hpp
 CMakeFiles/TLD.dir/source/main.cpp.o: /usr/local/Cellar/opencv/2.4.13/include/opencv2/video/video.hpp
 
+CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o: ../source/TLDSystemStruct.h
+CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o: ../source/tracker/TrackerBase.cpp
+CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o: ../source/tracker/TrackerBase.h
+CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o: ../source/video/VideoController.h
+CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o: ../source/video/ViewController.h
+CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o: /usr/local/Cellar/opencv/2.4.13/include/opencv2/calib3d/calib3d.hpp
+CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o: /usr/local/Cellar/opencv/2.4.13/include/opencv2/contrib/contrib.hpp
+CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o: /usr/local/Cellar/opencv/2.4.13/include/opencv2/contrib/openfabmap.hpp
+CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o: /usr/local/Cellar/opencv/2.4.13/include/opencv2/contrib/retina.hpp
+CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o: /usr/local/Cellar/opencv/2.4.13/include/opencv2/core/affine.hpp
+CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o: /usr/local/Cellar/opencv/2.4.13/include/opencv2/core/core.hpp
+CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o: /usr/local/Cellar/opencv/2.4.13/include/opencv2/core/core_c.h
+CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o: /usr/local/Cellar/opencv/2.4.13/include/opencv2/core/mat.hpp
+CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o: /usr/local/Cellar/opencv/2.4.13/include/opencv2/core/operations.hpp
+CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o: /usr/local/Cellar/opencv/2.4.13/include/opencv2/core/types_c.h
+CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o: /usr/local/Cellar/opencv/2.4.13/include/opencv2/core/version.hpp
+CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o: /usr/local/Cellar/opencv/2.4.13/include/opencv2/features2d/features2d.hpp
+CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o: /usr/local/Cellar/opencv/2.4.13/include/opencv2/flann/config.h
+CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o: /usr/local/Cellar/opencv/2.4.13/include/opencv2/flann/defines.h
+CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o: /usr/local/Cellar/opencv/2.4.13/include/opencv2/flann/miniflann.hpp
+CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o: /usr/local/Cellar/opencv/2.4.13/include/opencv2/highgui/highgui.hpp
+CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o: /usr/local/Cellar/opencv/2.4.13/include/opencv2/highgui/highgui_c.h
+CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o: /usr/local/Cellar/opencv/2.4.13/include/opencv2/imgproc/imgproc.hpp
+CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o: /usr/local/Cellar/opencv/2.4.13/include/opencv2/imgproc/imgproc_c.h
+CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o: /usr/local/Cellar/opencv/2.4.13/include/opencv2/imgproc/types_c.h
+CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o: /usr/local/Cellar/opencv/2.4.13/include/opencv2/ml/ml.hpp
+CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o: /usr/local/Cellar/opencv/2.4.13/include/opencv2/objdetect/objdetect.hpp
+CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o: /usr/local/Cellar/opencv/2.4.13/include/opencv2/opencv.hpp
+CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o: /usr/local/Cellar/opencv/2.4.13/include/opencv2/opencv_modules.hpp
+CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o: /usr/local/Cellar/opencv/2.4.13/include/opencv2/photo/photo.hpp
+CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o: /usr/local/Cellar/opencv/2.4.13/include/opencv2/photo/photo_c.h
+CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o: /usr/local/Cellar/opencv/2.4.13/include/opencv2/video/background_segm.hpp
+CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o: /usr/local/Cellar/opencv/2.4.13/include/opencv2/video/tracking.hpp
+CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o: /usr/local/Cellar/opencv/2.4.13/include/opencv2/video/video.hpp
+
+CMakeFiles/TLD.dir/source/tracker/TrackerInstance.cpp.o: ../source/tracker/TrackerInstance.cpp
+CMakeFiles/TLD.dir/source/tracker/TrackerInstance.cpp.o: ../source/tracker/TrackerInstance.h
+
 CMakeFiles/TLD.dir/source/tracker/medianflow/Medianflow.cpp.o: ../source/TLDSystemStruct.h
 CMakeFiles/TLD.dir/source/tracker/medianflow/Medianflow.cpp.o: ../source/tracker/medianflow/MedianFlow.h
 CMakeFiles/TLD.dir/source/tracker/medianflow/Medianflow.cpp.o: ../source/tracker/medianflow/Medianflow.cpp
@@ -331,6 +369,7 @@ CMakeFiles/TLD.dir/source/utils/VarClassifier.cpp.o: /usr/local/Cellar/opencv/2.
 CMakeFiles/TLD.dir/source/utils/VarClassifier.cpp.o: /usr/local/Cellar/opencv/2.4.13/include/opencv2/video/tracking.hpp
 CMakeFiles/TLD.dir/source/utils/VarClassifier.cpp.o: /usr/local/Cellar/opencv/2.4.13/include/opencv2/video/video.hpp
 
+CMakeFiles/TLD.dir/source/video/VideoController.cpp.o: ../source/TLDSystemStruct.h
 CMakeFiles/TLD.dir/source/video/VideoController.cpp.o: ../source/video/VideoController.cpp
 CMakeFiles/TLD.dir/source/video/VideoController.cpp.o: ../source/video/VideoController.h
 CMakeFiles/TLD.dir/source/video/VideoController.cpp.o: /usr/local/Cellar/opencv/2.4.13/include/opencv2/calib3d/calib3d.hpp

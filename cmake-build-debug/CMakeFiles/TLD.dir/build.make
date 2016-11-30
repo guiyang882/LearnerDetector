@@ -321,6 +321,54 @@ CMakeFiles/TLD.dir/source/TLD.cpp.o.provides: CMakeFiles/TLD.dir/source/TLD.cpp.
 CMakeFiles/TLD.dir/source/TLD.cpp.o.provides.build: CMakeFiles/TLD.dir/source/TLD.cpp.o
 
 
+CMakeFiles/TLD.dir/source/tracker/TrackerInstance.cpp.o: CMakeFiles/TLD.dir/flags.make
+CMakeFiles/TLD.dir/source/tracker/TrackerInstance.cpp.o: ../source/tracker/TrackerInstance.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/TLD.dir/source/tracker/TrackerInstance.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TLD.dir/source/tracker/TrackerInstance.cpp.o -c /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/TrackerInstance.cpp
+
+CMakeFiles/TLD.dir/source/tracker/TrackerInstance.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TLD.dir/source/tracker/TrackerInstance.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/TrackerInstance.cpp > CMakeFiles/TLD.dir/source/tracker/TrackerInstance.cpp.i
+
+CMakeFiles/TLD.dir/source/tracker/TrackerInstance.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TLD.dir/source/tracker/TrackerInstance.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/TrackerInstance.cpp -o CMakeFiles/TLD.dir/source/tracker/TrackerInstance.cpp.s
+
+CMakeFiles/TLD.dir/source/tracker/TrackerInstance.cpp.o.requires:
+
+.PHONY : CMakeFiles/TLD.dir/source/tracker/TrackerInstance.cpp.o.requires
+
+CMakeFiles/TLD.dir/source/tracker/TrackerInstance.cpp.o.provides: CMakeFiles/TLD.dir/source/tracker/TrackerInstance.cpp.o.requires
+	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/tracker/TrackerInstance.cpp.o.provides.build
+.PHONY : CMakeFiles/TLD.dir/source/tracker/TrackerInstance.cpp.o.provides
+
+CMakeFiles/TLD.dir/source/tracker/TrackerInstance.cpp.o.provides.build: CMakeFiles/TLD.dir/source/tracker/TrackerInstance.cpp.o
+
+
+CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o: CMakeFiles/TLD.dir/flags.make
+CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o: ../source/tracker/TrackerBase.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o -c /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/TrackerBase.cpp
+
+CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/TrackerBase.cpp > CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.i
+
+CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/TrackerBase.cpp -o CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.s
+
+CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o.requires:
+
+.PHONY : CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o.requires
+
+CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o.provides: CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o.requires
+	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o.provides.build
+.PHONY : CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o.provides
+
+CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o.provides.build: CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o
+
+
 # Object files for target TLD
 TLD_OBJECTS = \
 "CMakeFiles/TLD.dir/source/detector/Detector.cpp.o" \
@@ -333,7 +381,9 @@ TLD_OBJECTS = \
 "CMakeFiles/TLD.dir/source/utils/RandomFernsClassifier.cpp.o" \
 "CMakeFiles/TLD.dir/source/utils/VarClassifier.cpp.o" \
 "CMakeFiles/TLD.dir/source/main.cpp.o" \
-"CMakeFiles/TLD.dir/source/TLD.cpp.o"
+"CMakeFiles/TLD.dir/source/TLD.cpp.o" \
+"CMakeFiles/TLD.dir/source/tracker/TrackerInstance.cpp.o" \
+"CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o"
 
 # External object files for target TLD
 TLD_EXTERNAL_OBJECTS =
@@ -349,6 +399,8 @@ TLD: CMakeFiles/TLD.dir/source/utils/RandomFernsClassifier.cpp.o
 TLD: CMakeFiles/TLD.dir/source/utils/VarClassifier.cpp.o
 TLD: CMakeFiles/TLD.dir/source/main.cpp.o
 TLD: CMakeFiles/TLD.dir/source/TLD.cpp.o
+TLD: CMakeFiles/TLD.dir/source/tracker/TrackerInstance.cpp.o
+TLD: CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o
 TLD: CMakeFiles/TLD.dir/build.make
 TLD: /usr/local/lib/libopencv_videostab.2.4.13.dylib
 TLD: /usr/local/lib/libopencv_ts.a
@@ -370,7 +422,7 @@ TLD: /usr/local/lib/libopencv_imgproc.2.4.13.dylib
 TLD: /usr/local/lib/libopencv_flann.2.4.13.dylib
 TLD: /usr/local/lib/libopencv_core.2.4.13.dylib
 TLD: CMakeFiles/TLD.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable TLD"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable TLD"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/TLD.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -389,6 +441,8 @@ CMakeFiles/TLD.dir/requires: CMakeFiles/TLD.dir/source/utils/RandomFernsClassifi
 CMakeFiles/TLD.dir/requires: CMakeFiles/TLD.dir/source/utils/VarClassifier.cpp.o.requires
 CMakeFiles/TLD.dir/requires: CMakeFiles/TLD.dir/source/main.cpp.o.requires
 CMakeFiles/TLD.dir/requires: CMakeFiles/TLD.dir/source/TLD.cpp.o.requires
+CMakeFiles/TLD.dir/requires: CMakeFiles/TLD.dir/source/tracker/TrackerInstance.cpp.o.requires
+CMakeFiles/TLD.dir/requires: CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o.requires
 
 .PHONY : CMakeFiles/TLD.dir/requires
 

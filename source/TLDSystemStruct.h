@@ -157,11 +157,16 @@ static const bool SHOW_NEW_NN_SAMPLES = 1;
 static const float RF_FEA_SHIFT = 1.f / 5;
 static const float RF_FEA_OFF = RF_FEA_SHIFT;
 
+//物体跟踪的算法类型
 enum TRACK_TYPE {
     MEDIANFLOW,
     MEANSHIFT,
     CAMSHIFT,
     SIFT_KALMAN
 };
+
+//使用摄像头进行视频跟踪时的图像尺寸的参数设置
+const int CAM_CAP_IMG_WIDTH = 640;
+const int CAM_CAP_IMG_HEIGHT = 480;
 
 #endif

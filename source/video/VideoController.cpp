@@ -34,10 +34,10 @@ VideoController::VideoController(int camera):
     curr(0), frame(0), cameraMode(true), imageMode(false)
 {
     videoCapture = new VideoCapture(camera);
-    
-    int width = videoCapture->get(CV_CAP_PROP_FRAME_WIDTH);
-    int height = videoCapture->get(CV_CAP_PROP_FRAME_HEIGHT);
-    _frameSize = Size(width * (480.f /width), height * (480.f / width));
+
+    videoCapture->set(CV_CAP_PROP_FRAME_WIDTH, CAM_CAP_IMG_WIDTH);
+    videoCapture->set(CV_CAP_PROP_FRAME_HEIGHT, CAM_CAP_IMG_HEIGHT);
+    _frameSize = Size(CAM_CAP_IMG_WIDTH, CAM_CAP_IMG_HEIGHT);
 }
 
 VideoController::~VideoController() {

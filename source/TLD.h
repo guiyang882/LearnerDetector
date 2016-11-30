@@ -44,7 +44,7 @@ public:
     
     void setNextFrame(const Mat &frame);
     int track(TRACK_TYPE track_type = MEDIANFLOW);
-    int medianflow_track();
+    int learning_detecting(int trackerStatus, TYPE_DETECTOR_SCANBB& trackerRet);
     TYPE_BBOX getBB();
 };
 

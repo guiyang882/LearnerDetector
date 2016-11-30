@@ -231,6 +231,60 @@ source/main.cpp.s:
 	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/main.cpp.s
 .PHONY : source/main.cpp.s
 
+source/tracker/TrackerBase.o: source/tracker/TrackerBase.cpp.o
+
+.PHONY : source/tracker/TrackerBase.o
+
+# target to build an object file
+source/tracker/TrackerBase.cpp.o:
+	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o
+.PHONY : source/tracker/TrackerBase.cpp.o
+
+source/tracker/TrackerBase.i: source/tracker/TrackerBase.cpp.i
+
+.PHONY : source/tracker/TrackerBase.i
+
+# target to preprocess a source file
+source/tracker/TrackerBase.cpp.i:
+	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.i
+.PHONY : source/tracker/TrackerBase.cpp.i
+
+source/tracker/TrackerBase.s: source/tracker/TrackerBase.cpp.s
+
+.PHONY : source/tracker/TrackerBase.s
+
+# target to generate assembly for a file
+source/tracker/TrackerBase.cpp.s:
+	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.s
+.PHONY : source/tracker/TrackerBase.cpp.s
+
+source/tracker/TrackerInstance.o: source/tracker/TrackerInstance.cpp.o
+
+.PHONY : source/tracker/TrackerInstance.o
+
+# target to build an object file
+source/tracker/TrackerInstance.cpp.o:
+	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/tracker/TrackerInstance.cpp.o
+.PHONY : source/tracker/TrackerInstance.cpp.o
+
+source/tracker/TrackerInstance.i: source/tracker/TrackerInstance.cpp.i
+
+.PHONY : source/tracker/TrackerInstance.i
+
+# target to preprocess a source file
+source/tracker/TrackerInstance.cpp.i:
+	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/tracker/TrackerInstance.cpp.i
+.PHONY : source/tracker/TrackerInstance.cpp.i
+
+source/tracker/TrackerInstance.s: source/tracker/TrackerInstance.cpp.s
+
+.PHONY : source/tracker/TrackerInstance.s
+
+# target to generate assembly for a file
+source/tracker/TrackerInstance.cpp.s:
+	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/tracker/TrackerInstance.cpp.s
+.PHONY : source/tracker/TrackerInstance.cpp.s
+
 source/tracker/medianflow/Medianflow.o: source/tracker/medianflow/Medianflow.cpp.o
 
 .PHONY : source/tracker/medianflow/Medianflow.o
@@ -441,6 +495,12 @@ help:
 	@echo "... source/main.o"
 	@echo "... source/main.i"
 	@echo "... source/main.s"
+	@echo "... source/tracker/TrackerBase.o"
+	@echo "... source/tracker/TrackerBase.i"
+	@echo "... source/tracker/TrackerBase.s"
+	@echo "... source/tracker/TrackerInstance.o"
+	@echo "... source/tracker/TrackerInstance.i"
+	@echo "... source/tracker/TrackerInstance.s"
 	@echo "... source/tracker/medianflow/Medianflow.o"
 	@echo "... source/tracker/medianflow/Medianflow.i"
 	@echo "... source/tracker/medianflow/Medianflow.s"

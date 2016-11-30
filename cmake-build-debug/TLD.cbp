@@ -108,6 +108,18 @@
 		<Unit filename="/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/main.cpp">
 			<Option target="TLD"/>
 		</Unit>
+		<Unit filename="/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/TrackerBase.cpp">
+			<Option target="TLD"/>
+		</Unit>
+		<Unit filename="/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/TrackerBase.h">
+			<Option target="TLD"/>
+		</Unit>
+		<Unit filename="/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/TrackerInstance.cpp">
+			<Option target="TLD"/>
+		</Unit>
+		<Unit filename="/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/TrackerInstance.h">
+			<Option target="TLD"/>
+		</Unit>
 		<Unit filename="/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/medianflow/Medianflow.cpp">
 			<Option target="TLD"/>
 		</Unit>

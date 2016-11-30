@@ -109,23 +109,28 @@ int TLD::cluster() {
     return cntBelong;
 }
 
-int TLD::track(TRACK_TYPE  track_type) {
+int TLD::track(TRACK_TYPE track_type) {
     int tld_track_status = 0;
 
     if(track_type == MEDIANFLOW) {
         medianflow_tracker = new MedianFlow(prevImg, nextImg);
-        tld_track_status = medianflow_track();
+        TYPE_MF_BB _trackerRet = medianflow_tracker->trackBox(bbox, tld_track_status);
+        TYPE_DETECTOR_SCANBB trackerRet(Rect(round(_trackerRet.x), round(_trackerRet.y), round(_trackerRet.width), round(_trackerRet.height)));
+        tld_track_status = learning_detecting(tld_track_status, trackerRet);
         if(medianflow_tracker != NULL)
             delete medianflow_tracker;
+    } else if(track_type == MEANSHIFT) {
+       ;
+    } else if(track_type == CAMSHIFT) {
+
+    } else {
+        cout << "No such this track_type in the system ! Please Check it out !" << endl;
     }
 
     return tld_track_status;
 }
 
-int TLD::medianflow_track() {
-    int trackerStatus;
-    TYPE_MF_BB _trackerRet = medianflow_tracker->trackBox(bbox, trackerStatus);
-    TYPE_DETECTOR_SCANBB trackerRet(Rect(round(_trackerRet.x), round(_trackerRet.y), round(_trackerRet.width), round(_trackerRet.height)));
+int TLD::learning_detecting(int trackerStatus, TYPE_DETECTOR_SCANBB &trackerRet) {
     TYPE_DETECTOR_SCANBB trackerRetInside = getInside(trackerRet);
 
     if(trackerStatus == MF_TRACK_SUCCESS) {
@@ -141,9 +146,6 @@ int TLD::medianflow_track() {
 
     if(trackerStatus != MF_TRACK_SUCCESS && detectorRet.size() == 0) {
         bbox = BB_ERROR;
-
-        delete medianflow_tracker;
-        medianflow_tracker = NULL;
         return TLD_TRACK_FAILED;
     }
 
@@ -217,8 +219,6 @@ int TLD::medianflow_track() {
             } else {
                 bbox = BB_ERROR;
                 trainValid = false;
-                delete medianflow_tracker;
-                medianflow_tracker = NULL;
                 return TLD_TRACK_FAILED;
             }
         }

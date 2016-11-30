@@ -40,17 +40,14 @@ private:
     TYPE_MF_BB calcRect(const TYPE_MF_BB &rect, const vector<TYPE_MF_PT> &pts, const vector<TYPE_MF_PT> &FPts,  const vector<TYPE_MF_PT> &FBPts, const vector<int> &rejected, int &status);
     
 public:
-    
     MedianFlow();
  
     // prevImg & nextImg should be CV_8U
     // viewController for showing MedianFlow results
     MedianFlow(const Mat &prevImg, const Mat &nextImg, ViewController *viewController = NULL);
-    
     ~MedianFlow();
     
     static bool compare(const pair<float, int> &a, const pair<float, int> &b);
-    
     TYPE_MF_BB trackBox(const TYPE_MF_BB &inputBox, int &status);
 };
 

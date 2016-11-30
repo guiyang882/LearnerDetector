@@ -10,6 +10,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/TLD.dir/source/utils/VarClassifier.cpp.o"
   "CMakeFiles/TLD.dir/source/main.cpp.o"
   "CMakeFiles/TLD.dir/source/TLD.cpp.o"
+  "CMakeFiles/TLD.dir/source/tracker/TrackerInstance.cpp.o"
+  "CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o"
   "TLD.pdb"
   "TLD"
 )

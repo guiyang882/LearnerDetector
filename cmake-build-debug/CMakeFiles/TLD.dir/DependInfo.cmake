@@ -8,6 +8,8 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/detector/Detector.cpp" "/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/cmake-build-debug/CMakeFiles/TLD.dir/source/detector/Detector.cpp.o"
   "/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/learner/Learner.cpp" "/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/cmake-build-debug/CMakeFiles/TLD.dir/source/learner/Learner.cpp.o"
   "/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/main.cpp" "/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/cmake-build-debug/CMakeFiles/TLD.dir/source/main.cpp.o"
+  "/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/TrackerBase.cpp" "/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/cmake-build-debug/CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o"
+  "/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/TrackerInstance.cpp" "/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/cmake-build-debug/CMakeFiles/TLD.dir/source/tracker/TrackerInstance.cpp.o"
   "/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/medianflow/Medianflow.cpp" "/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/cmake-build-debug/CMakeFiles/TLD.dir/source/tracker/medianflow/Medianflow.cpp.o"
   "/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/medianflow/OpticalFlow.cpp" "/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/cmake-build-debug/CMakeFiles/TLD.dir/source/tracker/medianflow/OpticalFlow.cpp.o"
   "/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/utils/NNClassifier.cpp" "/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/cmake-build-debug/CMakeFiles/TLD.dir/source/utils/NNClassifier.cpp.o"

@@ -87,7 +87,6 @@ Rect ViewController::getRect() {
     bool selectValid = false;
     
     pair<pair<void*, void*>, bool*> pp(p, &selectValid);
-    
     setMouseCallback(retWindowName, ViewController::onMouse, &pp);
 
     if(videoController->cameraMode) {
@@ -104,7 +103,6 @@ Rect ViewController::getRect() {
             waitKey();
         }
     }
-    
     destroyWindow(retWindowName);
     
     return rect;

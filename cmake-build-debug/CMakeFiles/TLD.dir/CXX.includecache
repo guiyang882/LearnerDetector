@@ -92,6 +92,28 @@ TLD.h
 TLDSystemStruct.h
 /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/TLDSystemStruct.h
 
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/TrackerBase.cpp
+TrackerBase.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/TrackerBase.h
+
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/TrackerBase.h
+iostream
+-
+cmath
+-
+../TLDSystemStruct.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/TLDSystemStruct.h
+../video/ViewController.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/video/ViewController.h
+
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/TrackerInstance.cpp
+TrackerInstance.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/TrackerInstance.h
+
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/TrackerInstance.h
+iostream
+-
+
 /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/medianflow/MedianFlow.h
 cmath
 -
@@ -171,6 +193,8 @@ iostream
 -
 opencv2/opencv.hpp
 -
+../TLDSystemStruct.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/TLDSystemStruct.h
 
 /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/video/ViewController.cpp
 ViewController.h
