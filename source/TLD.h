@@ -21,7 +21,7 @@ using namespace cv;
 
 class TLD {
 private:
-    MedianFlow *tracker;
+    MedianFlow *medianflow_tracker;
     Detector detector;
     Learner learner;
     
@@ -43,8 +43,8 @@ public:
     ~TLD();
     
     void setNextFrame(const Mat &frame);
-    int track();
-    
+    int track(TRACK_TYPE track_type = MEDIANFLOW);
+    int medianflow_track();
     TYPE_BBOX getBB();
 };
 

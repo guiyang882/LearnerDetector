@@ -157,4 +157,11 @@ static const bool SHOW_NEW_NN_SAMPLES = 1;
 static const float RF_FEA_SHIFT = 1.f / 5;
 static const float RF_FEA_OFF = RF_FEA_SHIFT;
 
+enum TRACK_TYPE {
+    MEDIANFLOW,
+    MEANSHIFT,
+    CAMSHIFT,
+    SIFT_KALMAN
+};
+
 #endif

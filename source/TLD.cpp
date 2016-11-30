@@ -13,6 +13,7 @@ TLD::TLD(const Mat &img, const TYPE_BBOX &_bb) {
     learner.init(&detector);
     
     trainValid = true;
+    medianflow_tracker = NULL;
 }
 
 TLD::~TLD() {
@@ -108,60 +109,72 @@ int TLD::cluster() {
     return cntBelong;
 }
 
-int TLD::track() {
-    tracker = new MedianFlow(prevImg, nextImg);
-    
+int TLD::track(TRACK_TYPE  track_type) {
+    int tld_track_status = 0;
+
+    if(track_type == MEDIANFLOW) {
+        medianflow_tracker = new MedianFlow(prevImg, nextImg);
+        tld_track_status = medianflow_track();
+        if(medianflow_tracker != NULL)
+            delete medianflow_tracker;
+    }
+
+    return tld_track_status;
+}
+
+int TLD::medianflow_track() {
     int trackerStatus;
-    TYPE_MF_BB _trackerRet = tracker->trackBox(bbox, trackerStatus);
+    TYPE_MF_BB _trackerRet = medianflow_tracker->trackBox(bbox, trackerStatus);
     TYPE_DETECTOR_SCANBB trackerRet(Rect(round(_trackerRet.x), round(_trackerRet.y), round(_trackerRet.width), round(_trackerRet.height)));
     TYPE_DETECTOR_SCANBB trackerRetInside = getInside(trackerRet);
-    
+
     if(trackerStatus == MF_TRACK_SUCCESS) {
         detector.updataNNPara(nextImg32F, trackerRetInside);
     }
-    
+
     //detect
     detector.dectect(nextImg, nextImgB, nextImg32F, detectorRet);
-    
+
     //integrate
     float trackSc = -1;
     TYPE_DETECTOR_SCANBB finalBB, finalBBInside;
-    
+
     if(trackerStatus != MF_TRACK_SUCCESS && detectorRet.size() == 0) {
         bbox = BB_ERROR;
-        
-        delete tracker;
+
+        delete medianflow_tracker;
+        medianflow_tracker = NULL;
         return TLD_TRACK_FAILED;
     }
-    
+
     if(trackerStatus != MF_TRACK_SUCCESS) {
         trainValid = false;
     } else {
         int value = trackerRetInside.Sr > max(0.7f, detector.getNNThPos());
         trainValid |= value;
     }
-    
+
     if(trackerStatus == MF_TRACK_SUCCESS) {
         trackSc = trackerRetInside.Sc;
         finalBB = trackerRet;
         finalBBInside = trackerRetInside;
     }
-    
+
     if(detectorRet.size()) {
         //cluster
         int cntBelong = cluster();
-        
+
         if(trackerStatus == MF_TRACK_SUCCESS) {
             int confidentDetections = 0;
             int lastId = 0;
-            
+
             for(int i = 0; i < cntBelong; i++) {
                 if(overlap(clusterBB[i], trackerRet) < 0.5 && clusterBB[i].Sc > trackSc) {
                     confidentDetections++;
                     lastId = i;
                 }
             }
-            
+
             if(confidentDetections == 1) {
                 finalBB = finalBBInside = clusterBB[lastId];
                 trainValid = false;
@@ -175,23 +188,23 @@ int TLD::track() {
                 for(int i = 0; i < detectorRet.size(); i++) {
                     if(overlap(detectorRet[i], trackerRet) > 0.7) {
                         closeDetections++;
-                        
+
                         cx += detectorRet[i].x;
                         cy += detectorRet[i].y;
                         cw += detectorRet[i].width;
                         ch += detectorRet[i].height;
                     }
                 }
-                
+
                 int tWeight = 10;
                 cx = (tWeight * trackerRet.x + cx) / (tWeight + closeDetections);
                 cy = (tWeight * trackerRet.y + cy) / (tWeight + closeDetections);
                 cw = (tWeight * trackerRet.width + cw) / (tWeight + closeDetections);
                 ch = (tWeight * trackerRet.height + ch) / (tWeight + closeDetections);
-                
+
                 finalBB = Rect(round(cx), round(cy), round(cw), round(ch));
                 finalBBInside = getInside(finalBB);
-                
+
                 if(finalBBInside.area() <= 0) {
                     trainValid = false;
                     return TLD_TRACK_FAILED;
@@ -204,14 +217,15 @@ int TLD::track() {
             } else {
                 bbox = BB_ERROR;
                 trainValid = false;
-                delete tracker;
+                delete medianflow_tracker;
+                medianflow_tracker = NULL;
                 return TLD_TRACK_FAILED;
             }
         }
     }
-    
+
     detector.updataNNPara(nextImg32F, finalBBInside);
-    
+
     if(trainValid) {
         if(finalBB == finalBBInside) {
             if(finalBBInside.Sr > 0.5) {
@@ -221,10 +235,8 @@ int TLD::track() {
             }
         }
     }
-  
-    bbox = finalBB;
 
-    delete tracker;
+    bbox = finalBB;
     return TLD_TRACK_SUCCESS;
 }
 
