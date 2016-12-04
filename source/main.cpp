@@ -14,13 +14,6 @@
 using namespace std;
 using namespace cv;
 
-Rect readRect() {
-    int width, height, x, y;
-    scanf("[%d x %d from (%d, %d)]\n", &width, &height, &x, &y);
-    
-    return Rect(x, y, width, height);
-}
-
 //void testOnTLDDataset() {
 //    string dir("/Users/Orthocenter/Developments/TLD/dataset2/06_car/");
 //
@@ -193,9 +186,7 @@ Rect readRect() {
 
 void testOnCamera() {
     VideoController videoController(0);
-
     videoController.readNextFrame();
-
     Rect rect = videoController.getRect();
     cout << "Input Rect : " <<  rect << endl;
     

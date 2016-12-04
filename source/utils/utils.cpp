@@ -4,7 +4,7 @@
 
 #include "utils.h"
 
-void s_drawLines(Mat &img, const vector<Point2f> &firstPts,
+void drawLines(Mat &img, const vector<Point2f> &firstPts,
                                const vector<Point2f> &secondPts,
                                const Scalar &color, int thickness) {
     for(int i = 0; i < firstPts.size(); i++) {
@@ -14,7 +14,7 @@ void s_drawLines(Mat &img, const vector<Point2f> &firstPts,
     }
 }
 
-void s_drawCircles(Mat &img, const vector<Point2f> &pts, const Scalar &color, int radius) {
+void drawCircles(Mat &img, const vector<Point2f> &pts, const Scalar &color, int radius) {
     for(int i = 0; i < pts.size(); i++) {
         circle(img, pts[i], radius, color);
     }
@@ -32,26 +32,34 @@ void onMouse(int event, int x, int y, int flags, void* param) {
 
     static Point2i pre_pos = {0, 0}, cur_pos = {0, 0};
 
-    if(event == CV_EVENT_LBUTTONDOWN && flags != CV_EVENT_FLAG_LBUTTON) {
-        selectValid = false;
-        pre_pos = Point2i(x, y);
-    } else if(flags == CV_EVENT_FLAG_LBUTTON && event == CV_EVENT_LBUTTONDOWN) {
-        cur_pos = Point2i(x, y);
-        int x0 = min(pre_pos.x, cur_pos.x);
-        int y0 = min(pre_pos.y, cur_pos.y);
-        int x1 = max(pre_pos.x, cur_pos.x) - x0;
-        int y1 = max(pre_pos.y, cur_pos.y) - y0;
-        rect = Rect(x0, y0, x1, y1);
-        selectValid = false;
-        cout << "Mouse Move Here !" << endl;
-    } else if(event == CV_EVENT_LBUTTONUP) {
-        cur_pos = Point2i(x, y);
-        int x0 = min(pre_pos.x, cur_pos.x);
-        int y0 = min(pre_pos.y, cur_pos.y);
-        int x1 = max(pre_pos.x, cur_pos.x) - x0;
-        int y1 = max(pre_pos.y, cur_pos.y) - y0;
-        rect = Rect(x0, y0, x1, y1);
-        selectValid = true;
-        cout << "Mouse Left Up !" << endl;
+    switch(event) {
+        case EVENT_LBUTTONDOWN:
+            pre_pos = Point2i(x, y);
+            selectValid = false;
+            cout << "Left Mouse Push Down !" << endl;
+            break;
+
+        case EVENT_LBUTTONUP: {
+            cur_pos = Point2i(x, y);
+            int x0 = min(pre_pos.x, cur_pos.x);
+            int y0 = min(pre_pos.y, cur_pos.y);
+            int x1 = max(pre_pos.x, cur_pos.x) - x0;
+            int y1 = max(pre_pos.y, cur_pos.y) - y0;
+            rect = Rect(x0, y0, x1, y1);
+            selectValid = true;
+            cout << "Right Mouse Push Down !" << endl;
+            break;
+        }
+        case EVENT_MOUSEMOVE:
+            if(flags & EVENT_FLAG_LBUTTON) {
+                int w = x - pre_pos.x;
+                int h = y - pre_pos.y;
+                rect = Rect(pre_pos.x, pre_pos.y, w, h);
+                selectValid = false;
+                cout << "Left Mouse Push Down && Move !" << endl;
+            }
+            break;
+        default:
+            break;
     }
 }

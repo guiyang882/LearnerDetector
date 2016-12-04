@@ -14,8 +14,8 @@
 using namespace std;
 using namespace cv;
 
-void s_drawCircles(Mat &img, const vector<Point2f> &pts, const Scalar &color = COLOR_WHITE, int radius = 3);
-void s_drawLines(Mat &img, const vector<Point2f> &firstPts, const vector<Point2f> &secondPts, const Scalar &color = COLOR_RED, int thickness = 1);
+void drawCircles(Mat &img, const vector<Point2f> &pts, const Scalar &color = COLOR_WHITE, int radius = 3);
+void drawLines(Mat &img, const vector<Point2f> &firstPts, const vector<Point2f> &secondPts, const Scalar &color = COLOR_RED, int thickness = 1);
 void s_drawRect(Mat &img, const Rect_<float> &rect, const Scalar &color = COLOR_WHITE, int thickness = 1);
 void onMouse(int event, int x, int y, int, void *);
 

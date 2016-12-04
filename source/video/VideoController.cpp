@@ -113,12 +113,13 @@ Rect VideoController::getRect() {
     setMouseCallback(retWindowName, onMouse, &pp);
 
     if(cameraMode) {
-        while(true) {
+        while(!selectValid) {
             readNextFrame();
             drawRect(rect);
             imshow(retWindowName, cache);
-            if(selectValid)
+            if(waitKey(1) == 27) {
                 break;
+            }
         }
     } else {
         while(!selectValid) {
