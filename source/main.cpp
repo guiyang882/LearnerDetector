@@ -191,9 +191,12 @@ void testOnCamera() {
     cout << "Input Rect : " <<  rect << endl;
     
     TLD tld(videoController.getCurrFrame(), rect);
-    
+
+    namedWindow("TLD", CV_WINDOW_AUTOSIZE);
+    imshow("TLD", videoController.getCurrFrame());
+
     while(videoController.readNextFrame()) {
-        cout << "Frame #" << videoController.frameNumber() << endl;
+//        cout << "Frame #" << videoController.frameNumber() << endl;
         tld.setNextFrame(videoController.getCurrFrame());
         
         clock_t st = clock();
@@ -203,9 +206,12 @@ void testOnCamera() {
 
         videoController.drawRect(tld.getBB(), COLOR_GREEN, 2);
         videoController.showCache();
-
-        cout << endl;
+        if(waitKey(1) == 27) {
+            break;
+        }
     }
+    destroyAllWindows();
+
 }
 
 int main(int argc, char *argv[]) {

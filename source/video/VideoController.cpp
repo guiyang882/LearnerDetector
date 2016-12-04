@@ -117,7 +117,7 @@ Rect VideoController::getRect() {
             readNextFrame();
             drawRect(rect);
             imshow(retWindowName, cache);
-            if(waitKey(1) == 27) {
+            if(waitKey(5) == 27) {
                 break;
             }
         }

@@ -47,7 +47,7 @@ void onMouse(int event, int x, int y, int flags, void* param) {
             int y1 = max(pre_pos.y, cur_pos.y) - y0;
             rect = Rect(x0, y0, x1, y1);
             selectValid = true;
-            cout << "Right Mouse Push Down !" << endl;
+            cout << "Left Mouse Push Up !" << endl;
             break;
         }
         case EVENT_MOUSEMOVE:
