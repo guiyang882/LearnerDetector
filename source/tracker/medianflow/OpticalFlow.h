@@ -23,8 +23,10 @@ public:
     // prevImg & nextImg should be CV_8U
     OpticalFlow(const Mat &prevImg, const Mat &nextImg);
     ~OpticalFlow();
-    
+
+public:
     void trackPts(vector<TYPE_OF_PT> &pts, vector<TYPE_OF_PT> &retPts, vector<uchar> &status);
+    void updateImage(Mat &prev, Mat &next);
 };
 
 #endif /* defined(__MedianFlow__OpticalFlow__) */

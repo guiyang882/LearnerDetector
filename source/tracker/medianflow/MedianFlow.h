@@ -19,6 +19,21 @@ using namespace cv;
 
 class MedianFlow : public TrackerBase {
 private:
+    MedianFlow();
+
+    // prevImg & nextImg should be CV_8U
+    // viewController for showing MedianFlow results
+    MedianFlow(const Mat &prevImg, const Mat &nextImg, ViewController *viewController = NULL);
+
+    static MedianFlow* instanceMedianFlowPointer;
+    ~MedianFlow();
+
+public:
+    static MedianFlow* getInstance();
+    TYPE_MF_BB trackBox(const TYPE_MF_BB &inputBox, int &status);
+    void updateImage(Mat prev, Mat next);
+
+private:
     OpticalFlow *opticalFlow, *opticalFlowSwap;
 
     void generatePts(const TYPE_MF_BB &box, vector<TYPE_MF_PT> &ret);
@@ -27,16 +42,6 @@ private:
     void filterOFError(const vector<TYPE_MF_PT> &pts, const vector<uchar> &retF, vector<int> &rejected);
     void filterFB(const vector<TYPE_MF_PT> &initialPts, const vector<TYPE_MF_PT> &FBPts, vector<int> &rejected);
     void filterNCC(const vector<TYPE_MF_PT> &initialPts, const vector<TYPE_MF_PT> &FPts, vector<int> &rejected);
-    
-public:
-    MedianFlow();
- 
-    // prevImg & nextImg should be CV_8U
-    // viewController for showing MedianFlow results
-    MedianFlow(const Mat &prevImg, const Mat &nextImg, ViewController *viewController = NULL);
-    ~MedianFlow();
-    
-    TYPE_MF_BB trackBox(const TYPE_MF_BB &inputBox, int &status);
 };
 
 #endif /* defined(__MedianFlow__MedianFlow__) */

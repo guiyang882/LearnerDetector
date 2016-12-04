@@ -113,12 +113,13 @@ int TLD::track(TRACK_TYPE track_type) {
     int tld_track_status = 0;
 
     if(track_type == MEDIANFLOW) {
-        medianflow_tracker = new MedianFlow(prevImg, nextImg);
+        medianflow_tracker = MedianFlow::getInstance();
+        medianflow_tracker->updateImage(prevImg, nextImg);
         TYPE_MF_BB _trackerRet = medianflow_tracker->trackBox(bbox, tld_track_status);
         TYPE_DETECTOR_SCANBB trackerRet(Rect(round(_trackerRet.x), round(_trackerRet.y), round(_trackerRet.width), round(_trackerRet.height)));
         tld_track_status = learning_detecting(tld_track_status, trackerRet);
-        if(medianflow_tracker != NULL)
-            delete medianflow_tracker;
+//        if(medianflow_tracker != NULL)
+//            delete medianflow_tracker;
     } else if(track_type == MEANSHIFT) {
        ;
     } else if(track_type == CAMSHIFT) {

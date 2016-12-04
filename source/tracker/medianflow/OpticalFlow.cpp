@@ -24,3 +24,8 @@ void OpticalFlow::trackPts(vector<TYPE_OF_PT> &pts, vector<TYPE_OF_PT> &retPts, 
                          cvTermCriteria(CV_TERMCRIT_ITER | CV_TERMCRIT_EPS, 30, 0.01),
                          OPTFLOW_USE_INITIAL_FLOW);
 }
+
+void OpticalFlow::updateImage(Mat &prev, Mat &next) {
+    this->prevImg = prev;
+    this->nextImg = next;
+}
