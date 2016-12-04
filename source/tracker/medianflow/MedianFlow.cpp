@@ -17,14 +17,12 @@ MedianFlow::MedianFlow() {
     opticalFlowSwap = new OpticalFlow();
 }
 
-MedianFlow::MedianFlow(const Mat &prevImg, const Mat &nextImg, ViewController *_viewController) {
+MedianFlow::MedianFlow(const Mat &prevImg, const Mat &nextImg) {
     this->prevImg = prevImg;
     this->nextImg = nextImg;
     
     opticalFlow = new OpticalFlow(this->prevImg, this->nextImg);
     opticalFlowSwap = new OpticalFlow(this->nextImg, this->prevImg);
-    
-    viewController = _viewController;
 }
 
 void MedianFlow::updateImage(Mat prev, Mat next) {

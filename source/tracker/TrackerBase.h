@@ -12,7 +12,6 @@
 #include <iostream>
 #include <cmath>
 #include "../TLDSystemStruct.h"
-#include "../video/ViewController.h"
 
 using namespace std;
 
@@ -34,7 +33,6 @@ public:
 
 protected:
     Mat prevImg, nextImg;
-    ViewController *viewController;
 };
 
 

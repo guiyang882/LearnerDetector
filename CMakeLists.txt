@@ -19,9 +19,7 @@ set(SOURCE_FILES
     source/tracker/medianflow/OpticalFlow.h
     source/video/VideoController.cpp
     source/video/VideoController.h
-    source/video/ViewController.cpp
-    source/video/ViewController.h
-    source/utils/NNClassifier.cpp
+        source/utils/NNClassifier.cpp
     source/utils/NNClassifier.h
     source/utils/RandomFernsClassifier.cpp
     source/utils/RandomFernsClassifier.h
@@ -30,7 +28,7 @@ set(SOURCE_FILES
     source/main.cpp
     source/TLD.cpp
     source/TLD.h
-    source/TLDSystemStruct.h source/tracker/TrackerInstance.cpp source/tracker/TrackerInstance.h source/tracker/TrackerBase.cpp source/tracker/TrackerBase.h source/tracker/camshift/CamMeanShift.cpp source/tracker/camshift/CamMeanShift.h)
+    source/TLDSystemStruct.h source/tracker/TrackerInstance.cpp source/tracker/TrackerInstance.h source/tracker/TrackerBase.cpp source/tracker/TrackerBase.h source/tracker/camshift/CamMeanShift.cpp source/tracker/camshift/CamMeanShift.h source/utils/utils.cpp source/utils/utils.h)
 
 add_executable(TLD ${SOURCE_FILES})
 target_link_libraries(TLD ${OpenCV_LIBS})

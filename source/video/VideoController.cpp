@@ -31,7 +31,7 @@ VideoController::VideoController(const string &_path, const string &_append):
 }
 
 VideoController::VideoController(int camera):
-    curr(0), frame(0), cameraMode(true), imageMode(false)
+    curr(0), frame(0), cameraMode(true), imageMode(false), retWindowName("TLD")
 {
     videoCapture = new VideoCapture(camera);
 
@@ -57,10 +57,9 @@ Mat VideoController::getPrevFrame() {
 
 bool VideoController::readNextFrame() {
     curr ^= 1;
-    frame++;
-    
+
     if(imageMode) {
-        if(frame <= totalFrame) {
+        if(++frame <= totalFrame) {
             char filename[20];
             sprintf(filename, "%.5d", frame);
             string fullPath = path + filename + append;
@@ -70,7 +69,7 @@ bool VideoController::readNextFrame() {
         return false;
     } else {
         bool f = videoCapture -> read(frames[curr]);
-        resize(frames[curr], frames[curr], _frameSize);
+        frames[curr].copyTo(cache);
         return f;
     }
     return false;
@@ -88,4 +87,45 @@ int VideoController::frameNumber() {
 void VideoController::jumpToFrameNum(int num) {
     while(frameNumber() < num)
         readNextFrame();
+}
+
+void VideoController::showCache(const string &winName) {
+    if(winName.size())
+        imshow(winName, cache);
+    else
+        imshow(retWindowName, cache);
+}
+
+void VideoController::drawRect(const Rect_<float> &rect, const Scalar &color, int thickness) {
+    rectangle(cache, rect, color, thickness);
+}
+
+Rect VideoController::getRect() {
+    namedWindow(retWindowName, CV_WINDOW_AUTOSIZE);
+    imshow(retWindowName, getCurrFrame());
+
+    Rect rect(0, 0, CAM_CAP_IMG_WIDTH, CAM_CAP_IMG_HEIGHT);
+    pair<void*, void*> p(&rect, this);
+
+    bool selectValid = false;
+
+    pair<pair<void*, void*>, bool*> pp(p, &selectValid);
+    setMouseCallback(retWindowName, onMouse, &pp);
+
+    if(cameraMode) {
+        while(true) {
+            readNextFrame();
+            drawRect(rect);
+            imshow(retWindowName, cache);
+            if(selectValid)
+                break;
+        }
+    } else {
+        while(!selectValid) {
+            waitKey();
+        }
+    }
+    destroyWindow(retWindowName);
+
+    return rect;
 }

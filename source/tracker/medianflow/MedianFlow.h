@@ -22,7 +22,7 @@ private:
 
     // prevImg & nextImg should be CV_8U
     // viewController for showing MedianFlow results
-    MedianFlow(const Mat &prevImg, const Mat &nextImg, ViewController *viewController = NULL);
+    MedianFlow(const Mat &prevImg, const Mat &nextImg);
 
     static MedianFlow* instanceMedianFlowPointer;
 
