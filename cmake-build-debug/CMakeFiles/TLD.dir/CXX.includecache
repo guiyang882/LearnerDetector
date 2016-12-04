@@ -114,6 +114,14 @@ TrackerInstance.h
 iostream
 -
 
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/camshift/CamMeanShift.cpp
+CamMeanShift.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/camshift/CamMeanShift.h
+
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/camshift/CamMeanShift.h
+../TrackerBase.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/TrackerBase.h
+
 /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/medianflow/MedianFlow.h
 cmath
 -
@@ -121,8 +129,6 @@ iostream
 -
 OpticalFlow.h
 /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/medianflow/OpticalFlow.h
-../../TLDSystemStruct.h
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/TLDSystemStruct.h
 ../TrackerBase.h
 /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/TrackerBase.h
 

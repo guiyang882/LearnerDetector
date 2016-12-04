@@ -27,7 +27,7 @@ public:
     bool isPointInside(const TYPE_MF_PT &pt, const TYPE_MF_COORD border = 0);
     bool isBoxUsable(const TYPE_MF_BB &rect);
     TYPE_MF_BB calcRect(const TYPE_MF_BB &rect, const vector<TYPE_MF_PT> &pts, const vector<TYPE_MF_PT> &FPts,  const vector<TYPE_MF_PT> &FBPts, const vector<int> &rejected, int &status);
-    void updateImage(Mat prev, Mat next);
+    void updateImage(Mat &prev, Mat &next);
 
 public:
     virtual TYPE_MF_BB trackBox(const TYPE_MF_BB &inputBox, int &status) = 0;

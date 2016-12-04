@@ -118,9 +118,7 @@ int TLD::track(TRACK_TYPE track_type) {
         TYPE_MF_BB _trackerRet = medianflow_tracker->trackBox(bbox, tld_track_status);
         TYPE_DETECTOR_SCANBB trackerRet(Rect(round(_trackerRet.x), round(_trackerRet.y), round(_trackerRet.width), round(_trackerRet.height)));
         tld_track_status = learning_detecting(tld_track_status, trackerRet);
-//        if(medianflow_tracker != NULL)
-//            delete medianflow_tracker;
-    } else if(track_type == MEANSHIFT) {
+    } else if(track_type == SIFT_KALMAN) {
        ;
     } else if(track_type == CAMSHIFT) {
 

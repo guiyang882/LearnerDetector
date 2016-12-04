@@ -12,6 +12,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/TLD.dir/source/TLD.cpp.o"
   "CMakeFiles/TLD.dir/source/tracker/TrackerInstance.cpp.o"
   "CMakeFiles/TLD.dir/source/tracker/TrackerBase.cpp.o"
+  "CMakeFiles/TLD.dir/source/tracker/camshift/CamMeanShift.cpp.o"
   "TLD.pdb"
   "TLD"
 )

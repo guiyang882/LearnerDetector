@@ -120,6 +120,12 @@
 		<Unit filename="/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/TrackerInstance.h">
 			<Option target="TLD"/>
 		</Unit>
+		<Unit filename="/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/camshift/CamMeanShift.cpp">
+			<Option target="TLD"/>
+		</Unit>
+		<Unit filename="/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/camshift/CamMeanShift.h">
+			<Option target="TLD"/>
+		</Unit>
 		<Unit filename="/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/medianflow/Medianflow.cpp">
 			<Option target="TLD"/>
 		</Unit>

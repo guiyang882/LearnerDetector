@@ -3,6 +3,15 @@
 
 #include "MedianFlow.h"
 
+MedianFlow* MedianFlow::instanceMedianFlowPointer = NULL;
+
+MedianFlow* MedianFlow::getInstance() {
+    if(instanceMedianFlowPointer == NULL) {
+        instanceMedianFlowPointer = new MedianFlow();
+    }
+    return instanceMedianFlowPointer;
+}
+
 MedianFlow::MedianFlow() {
     opticalFlow = new OpticalFlow();
     opticalFlowSwap = new OpticalFlow();
@@ -16,15 +25,6 @@ MedianFlow::MedianFlow(const Mat &prevImg, const Mat &nextImg, ViewController *_
     opticalFlowSwap = new OpticalFlow(this->nextImg, this->prevImg);
     
     viewController = _viewController;
-}
-
-MedianFlow* MedianFlow::instanceMedianFlowPointer = NULL;
-
-MedianFlow* MedianFlow::getInstance() {
-    if(instanceMedianFlowPointer == NULL) {
-        instanceMedianFlowPointer = new MedianFlow();
-    }
-    return instanceMedianFlowPointer;
 }
 
 void MedianFlow::updateImage(Mat prev, Mat next) {

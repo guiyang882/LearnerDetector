@@ -285,6 +285,33 @@ source/tracker/TrackerInstance.cpp.s:
 	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/tracker/TrackerInstance.cpp.s
 .PHONY : source/tracker/TrackerInstance.cpp.s
 
+source/tracker/camshift/CamMeanShift.o: source/tracker/camshift/CamMeanShift.cpp.o
+
+.PHONY : source/tracker/camshift/CamMeanShift.o
+
+# target to build an object file
+source/tracker/camshift/CamMeanShift.cpp.o:
+	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/tracker/camshift/CamMeanShift.cpp.o
+.PHONY : source/tracker/camshift/CamMeanShift.cpp.o
+
+source/tracker/camshift/CamMeanShift.i: source/tracker/camshift/CamMeanShift.cpp.i
+
+.PHONY : source/tracker/camshift/CamMeanShift.i
+
+# target to preprocess a source file
+source/tracker/camshift/CamMeanShift.cpp.i:
+	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/tracker/camshift/CamMeanShift.cpp.i
+.PHONY : source/tracker/camshift/CamMeanShift.cpp.i
+
+source/tracker/camshift/CamMeanShift.s: source/tracker/camshift/CamMeanShift.cpp.s
+
+.PHONY : source/tracker/camshift/CamMeanShift.s
+
+# target to generate assembly for a file
+source/tracker/camshift/CamMeanShift.cpp.s:
+	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/tracker/camshift/CamMeanShift.cpp.s
+.PHONY : source/tracker/camshift/CamMeanShift.cpp.s
+
 source/tracker/medianflow/Medianflow.o: source/tracker/medianflow/Medianflow.cpp.o
 
 .PHONY : source/tracker/medianflow/Medianflow.o
@@ -501,6 +528,9 @@ help:
 	@echo "... source/tracker/TrackerInstance.o"
 	@echo "... source/tracker/TrackerInstance.i"
 	@echo "... source/tracker/TrackerInstance.s"
+	@echo "... source/tracker/camshift/CamMeanShift.o"
+	@echo "... source/tracker/camshift/CamMeanShift.i"
+	@echo "... source/tracker/camshift/CamMeanShift.s"
 	@echo "... source/tracker/medianflow/Medianflow.o"
 	@echo "... source/tracker/medianflow/Medianflow.i"
 	@echo "... source/tracker/medianflow/Medianflow.s"

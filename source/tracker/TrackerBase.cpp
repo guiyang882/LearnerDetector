@@ -131,7 +131,7 @@ TYPE_MF_BB TrackerBase::calcRect(const TYPE_MF_BB &rect,
     return ret;
 }
 
-void TrackerBase::updateImage(Mat prev, Mat next) {
+void TrackerBase::updateImage(Mat &prev, Mat &next) {
     this->prevImg = prev;
     this->nextImg = next;
 }

@@ -39,8 +39,6 @@ void ViewController::showCache(const string &winName) {
         imshow(winName, cache);
     else
         imshow(retWindowName, cache);
-    
-    waitKey(1);
 }
 
 void ViewController::drawRect(const Rect_<float> &rect, const Scalar &color, int thickness) {
@@ -59,11 +57,18 @@ void ViewController::onMouse(int event, int x, int y, int flags, void* param) {
 
     static Point2i pre_pos = {0, 0}, cur_pos = {0, 0};
 
-    if(event == CV_EVENT_LBUTTONDOWN && flags) {
+    if(event == CV_EVENT_LBUTTONDOWN && flags != CV_EVENT_FLAG_LBUTTON) {
         selectValid = false;
         pre_pos = Point2i(x, y);
     } else if(flags == CV_EVENT_FLAG_LBUTTON && event == CV_EVENT_LBUTTONDOWN) {
         cur_pos = Point2i(x, y);
+        int x0 = min(pre_pos.x, cur_pos.x);
+        int y0 = min(pre_pos.y, cur_pos.y);
+        int x1 = max(pre_pos.x, cur_pos.x) - x0;
+        int y1 = max(pre_pos.y, cur_pos.y) - y0;
+        rect = Rect(x0, y0, x1, y1);
+        selectValid = false;
+        cout << "Mouse Move Here !" << endl;
     } else if(event == CV_EVENT_LBUTTONUP) {
         cur_pos = Point2i(x, y);
         int x0 = min(pre_pos.x, cur_pos.x);
@@ -72,6 +77,7 @@ void ViewController::onMouse(int event, int x, int y, int flags, void* param) {
         int y1 = max(pre_pos.y, cur_pos.y) - y0;
         rect = Rect(x0, y0, x1, y1);
         selectValid = true;
+        cout << "Mouse Left Up !" << endl;
     }
 }
 
@@ -94,7 +100,6 @@ Rect ViewController::getRect() {
             refreshCache();
             drawRect(rect);
             imshow(retWindowName, cache);
-            waitKey(1);
             if(selectValid)
                 break;
         }

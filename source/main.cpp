@@ -146,10 +146,9 @@ void testOnCamera() {
         viewController.refreshCache();
         viewController.drawRect(tld.getBB(), COLOR_GREEN, 2);
         viewController.showCache();
-        
+
         cout << endl;
     }
-    
 }
 
 void stabilize() {

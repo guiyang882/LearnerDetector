@@ -11,7 +11,6 @@
 #include <iostream>
 
 #include "OpticalFlow.h"
-#include "../../TLDSystemStruct.h"
 #include "../TrackerBase.h"
 
 using namespace std;
@@ -26,6 +25,8 @@ private:
     MedianFlow(const Mat &prevImg, const Mat &nextImg, ViewController *viewController = NULL);
 
     static MedianFlow* instanceMedianFlowPointer;
+
+public:
     ~MedianFlow();
 
 public:

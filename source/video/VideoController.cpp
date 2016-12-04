@@ -41,8 +41,10 @@ VideoController::VideoController(int camera):
 }
 
 VideoController::~VideoController() {
-    if(!imageMode)
+    if(cameraMode) {
         delete videoCapture;
+        videoCapture = NULL;
+    }
 }
 
 Mat VideoController::getCurrFrame() {
