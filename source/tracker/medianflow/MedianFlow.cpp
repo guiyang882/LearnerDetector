@@ -41,6 +41,9 @@ MedianFlow::~MedianFlow() {
     
     delete opticalFlowSwap;
     opticalFlowSwap = NULL;
+
+    delete instanceMedianFlowPointer;
+    instanceMedianFlowPointer = NULL;
 }
 
 void MedianFlow::generatePts(const TYPE_MF_BB &_box, vector<TYPE_MF_PT> &ret) {
