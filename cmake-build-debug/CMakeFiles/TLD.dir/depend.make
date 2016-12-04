@@ -6,6 +6,7 @@ CMakeFiles/TLD.dir/source/TLD.cpp.o: ../source/TLD.h
 CMakeFiles/TLD.dir/source/TLD.cpp.o: ../source/TLDSystemStruct.h
 CMakeFiles/TLD.dir/source/TLD.cpp.o: ../source/detector/Detector.h
 CMakeFiles/TLD.dir/source/TLD.cpp.o: ../source/learner/Learner.h
+CMakeFiles/TLD.dir/source/TLD.cpp.o: ../source/tracker/TrackerBase.h
 CMakeFiles/TLD.dir/source/TLD.cpp.o: ../source/tracker/medianflow/MedianFlow.h
 CMakeFiles/TLD.dir/source/TLD.cpp.o: ../source/tracker/medianflow/OpticalFlow.h
 CMakeFiles/TLD.dir/source/TLD.cpp.o: ../source/utils/NNClassifier.h
@@ -125,6 +126,7 @@ CMakeFiles/TLD.dir/source/main.cpp.o: ../source/TLDSystemStruct.h
 CMakeFiles/TLD.dir/source/main.cpp.o: ../source/detector/Detector.h
 CMakeFiles/TLD.dir/source/main.cpp.o: ../source/learner/Learner.h
 CMakeFiles/TLD.dir/source/main.cpp.o: ../source/main.cpp
+CMakeFiles/TLD.dir/source/main.cpp.o: ../source/tracker/TrackerBase.h
 CMakeFiles/TLD.dir/source/main.cpp.o: ../source/tracker/medianflow/MedianFlow.h
 CMakeFiles/TLD.dir/source/main.cpp.o: ../source/tracker/medianflow/OpticalFlow.h
 CMakeFiles/TLD.dir/source/main.cpp.o: ../source/utils/NNClassifier.h
@@ -202,6 +204,7 @@ CMakeFiles/TLD.dir/source/tracker/TrackerInstance.cpp.o: ../source/tracker/Track
 CMakeFiles/TLD.dir/source/tracker/TrackerInstance.cpp.o: ../source/tracker/TrackerInstance.h
 
 CMakeFiles/TLD.dir/source/tracker/medianflow/Medianflow.cpp.o: ../source/TLDSystemStruct.h
+CMakeFiles/TLD.dir/source/tracker/medianflow/Medianflow.cpp.o: ../source/tracker/TrackerBase.h
 CMakeFiles/TLD.dir/source/tracker/medianflow/Medianflow.cpp.o: ../source/tracker/medianflow/MedianFlow.h
 CMakeFiles/TLD.dir/source/tracker/medianflow/Medianflow.cpp.o: ../source/tracker/medianflow/Medianflow.cpp
 CMakeFiles/TLD.dir/source/tracker/medianflow/Medianflow.cpp.o: ../source/tracker/medianflow/OpticalFlow.h

@@ -7,6 +7,7 @@ CMakeFiles/TLD.dir/source/TLD.cpp.o
  /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/TLDSystemStruct.h
  /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/detector/Detector.h
  /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/learner/Learner.h
+ /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/TrackerBase.h
  /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/medianflow/MedianFlow.h
  /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/medianflow/OpticalFlow.h
  /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/utils/NNClassifier.h
@@ -126,6 +127,7 @@ CMakeFiles/TLD.dir/source/main.cpp.o
  /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/detector/Detector.h
  /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/learner/Learner.h
  /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/main.cpp
+ /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/TrackerBase.h
  /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/medianflow/MedianFlow.h
  /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/medianflow/OpticalFlow.h
  /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/utils/NNClassifier.h
@@ -203,6 +205,7 @@ CMakeFiles/TLD.dir/source/tracker/TrackerInstance.cpp.o
  /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/TrackerInstance.h
 CMakeFiles/TLD.dir/source/tracker/medianflow/Medianflow.cpp.o
  /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/TLDSystemStruct.h
+ /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/TrackerBase.h
  /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/medianflow/MedianFlow.h
  /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/medianflow/Medianflow.cpp
  /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/medianflow/OpticalFlow.h

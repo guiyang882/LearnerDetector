@@ -12,32 +12,21 @@
 
 #include "OpticalFlow.h"
 #include "../../TLDSystemStruct.h"
-
-// show result
-#include "../../video/ViewController.h"
+#include "../TrackerBase.h"
 
 using namespace std;
 using namespace cv;
 
-class MedianFlow {
+class MedianFlow : public TrackerBase {
 private:
-    Mat prevImg, nextImg;
-    
     OpticalFlow *opticalFlow, *opticalFlowSwap;
-    ViewController *viewController;
-    
-    bool isPointInside(const TYPE_MF_PT &pt, const TYPE_MF_COORD border = 0);
-    bool isBoxUsable(const TYPE_MF_BB &rect);
-    
+
     void generatePts(const TYPE_MF_BB &box, vector<TYPE_MF_PT> &ret);
-    
     float calcNCC(const Mat &img0, const Mat &img1);
     
     void filterOFError(const vector<TYPE_MF_PT> &pts, const vector<uchar> &retF, vector<int> &rejected);
     void filterFB(const vector<TYPE_MF_PT> &initialPts, const vector<TYPE_MF_PT> &FBPts, vector<int> &rejected);
     void filterNCC(const vector<TYPE_MF_PT> &initialPts, const vector<TYPE_MF_PT> &FPts, vector<int> &rejected);
-    
-    TYPE_MF_BB calcRect(const TYPE_MF_BB &rect, const vector<TYPE_MF_PT> &pts, const vector<TYPE_MF_PT> &FPts,  const vector<TYPE_MF_PT> &FBPts, const vector<int> &rejected, int &status);
     
 public:
     MedianFlow();
@@ -47,7 +36,6 @@ public:
     MedianFlow(const Mat &prevImg, const Mat &nextImg, ViewController *viewController = NULL);
     ~MedianFlow();
     
-    static bool compare(const pair<float, int> &a, const pair<float, int> &b);
     TYPE_MF_BB trackBox(const TYPE_MF_BB &inputBox, int &status);
 };
 

@@ -123,8 +123,8 @@ OpticalFlow.h
 /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/medianflow/OpticalFlow.h
 ../../TLDSystemStruct.h
 /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/TLDSystemStruct.h
-../../video/ViewController.h
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/video/ViewController.h
+../TrackerBase.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/TrackerBase.h
 
 /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/medianflow/Medianflow.cpp
 MedianFlow.h
