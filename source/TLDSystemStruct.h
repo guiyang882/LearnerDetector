@@ -166,6 +166,6 @@ enum TRACK_TYPE {
 
 //使用摄像头进行视频跟踪时的图像尺寸的参数设置
 const int CAM_CAP_IMG_WIDTH = 480;
-const int CAM_CAP_IMG_HEIGHT = 480;
+const int CAM_CAP_IMG_HEIGHT = 320;
 
 #endif
