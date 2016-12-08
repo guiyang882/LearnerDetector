@@ -18,7 +18,7 @@ void testOnTLDDataset() {
     string dir("/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/data/Car24/");
 
     string initFilename(dir + "init.txt");
-    string retFilename(dir + "myRet7.txt");
+    string retFilename(dir + "program.txt");
 
     FILE *fin = fopen(initFilename.c_str(), "r");
     FILE *fout = fopen(retFilename.c_str(), "w");
@@ -29,9 +29,12 @@ void testOnTLDDataset() {
 
     int tlx, tly, brx, bry;
     fscanf(fin, "%d,%d,%d,%d", &tlx, &tly, &brx, &bry);
+    fclose(fin);
+
     fprintf(fout, "%d,%d,%d,%d\n", tlx, tly, brx, bry);
 
-    Rect rect = Rect(Point2d(tlx, tly), Point2d(brx, bry));
+//    Rect rect = Rect(Point2d(tlx, tly), Point2d(brx, bry));
+    Rect rect = Rect(tlx, tly, brx, bry);
     cout << "Input Rect : " <<  rect << endl;
 
     videoController.drawRect(rect, COLOR_BLUE);
@@ -41,33 +44,29 @@ void testOnTLDDataset() {
     TLD tld(videoController.getCurrFrame(), rect);
 
     while(videoController.readNextFrame()) {
-        cout << "Frame #" << videoController.frameNumber() << endl;
         tld.setNextFrame(videoController.getCurrFrame());
 
-        Rect bbTrack;
         TYPE_DETECTOR_RET bbDetect;
 
         clock_t st = clock();
-
         tld.track();
-
         clock_t ed = clock();
         cout << "Time : " << (double)(ed - st) / CLOCKS_PER_SEC * 1000 << "ms" << endl;
 
         videoController.drawRect(tld.getBB(), COLOR_GREEN, 2);
         videoController.showCache();
-
-        cout << endl;
+        if(waitKey(1) == 27) {
+            break;
+        }
 
         Rect retBB = tld.getBB();
         if(retBB == Rect(Point2d(-1, -1), Point2d(-1, -1))) {
             fprintf(fout, "NaN,NaN,NaN,NaN\n");
         } else {
-            fprintf(fout, "%d,%d,%d,%d\n", retBB.tl().x, retBB.tl().y, retBB.br().x, retBB.br().y);
+            fprintf(fout, "%d,%d,%d,%d\n", retBB.tl().x, retBB.tl().y, retBB.width, retBB.height);
         }
     }
 
-    fclose(fin);
     fclose(fout);
 }
 

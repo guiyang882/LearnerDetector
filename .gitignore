@@ -7,3 +7,4 @@ data/
 *.data
 .idea/
 cmake-build-debug
+!data/readme.txt

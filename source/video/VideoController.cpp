@@ -19,14 +19,14 @@ VideoController::VideoController(const string &path):
 }
 
 VideoController::VideoController(const string &_path, const string &_append):
-    curr(0), frame(0), cameraMode(false), imageMode(true), append(_append), path(_path)
+    curr(0), frame(0), cameraMode(false), imageMode(true), append(_append), path(_path), retWindowName("TLD")
 {
     string frameFilename(path + "framenum.txt");
     FILE *fin = fopen(frameFilename.c_str(), "r");
     fscanf(fin, "%d", &totalFrame);
     fclose(fin);
-    
-    Mat tmp = imread(path + "00001" + append);
+    path += "source/";
+    Mat tmp = imread(path + "0001" + append);
     _frameSize = tmp.size();
 }
 
@@ -61,9 +61,10 @@ bool VideoController::readNextFrame() {
     if(imageMode) {
         if(++frame <= totalFrame) {
             char filename[20];
-            sprintf(filename, "%.5d", frame);
+            sprintf(filename, "%04d", frame);
             string fullPath = path + filename + append;
             frames[curr] = imread(fullPath);
+            frames[curr].copyTo(cache);
             return true;
         }
         return false;
