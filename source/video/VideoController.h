@@ -15,10 +15,10 @@ using namespace cv;
 
 class VideoController {
 public:
-    bool cameraMode, imageMode;
+    bool cameraMode, imageMode, videoMode;
     
-    VideoController(const string &path);
-    VideoController(const string &path, const string &append);
+    VideoController(const string &path, bool isCorp = false);
+    VideoController(const string &_path, const string &_append);
     VideoController(int camera = 0);
 
     ~VideoController();
@@ -41,6 +41,7 @@ private:
     Mat frames[2], cache;
     Size _frameSize;
     VideoCapture *videoCapture;
+    Rect _videoROIRect;
 
     string path, append, retWindowName;
     int totalFrame;

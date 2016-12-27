@@ -161,7 +161,8 @@ static const float RF_FEA_OFF = RF_FEA_SHIFT;
 enum TRACK_TYPE {
     MEDIANFLOW,
     CAMSHIFT,
-    SIFT_KALMAN
+    SIFT_KALMAN,
+    VIBE_TRACKING
 };
 
 //使用摄像头进行视频跟踪时的图像尺寸的参数设置

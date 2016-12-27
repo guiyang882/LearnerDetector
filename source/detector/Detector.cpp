@@ -152,18 +152,16 @@ void Detector::genScanBB()
     info << "Generated " << scanBBs.size() << " scanning grids." << endl;
 }
 
-void Detector::genPosData(const Mat &img, const Mat &imgB, const Mat &img32F, TYPE_TRAIN_DATA_SET &trainDataSetNN, TYPE_TRAIN_DATA_SET &trainDataSetRF)
-{
+void Detector::genPosData(const Mat &img, const Mat &imgB, const Mat &img32F, TYPE_TRAIN_DATA_SET &trainDataSetNN, TYPE_TRAIN_DATA_SET &trainDataSetRF) {
     int count = 0;
     
     // NN - POS
-    trainDataSetNN.push_back(make_pair(img32F(scanBBs[0]), CLASS_POS));
+    trainDataSetNN.push_back(make_pair<Mat, char>(img32F(scanBBs[0]), CLASS_POS));
     
     // RF - POS
     int tlx = img.cols, tly = img.rows, brx = 0, bry = 0;
     
-    for(int i = 0; i < DETECTOR_N_GOOD_BB && scanBBs[i].overlap >= GOODBB_OL; i++)
-    {
+    for(int i = 0; i < DETECTOR_N_GOOD_BB && scanBBs[i].overlap >= GOODBB_OL; i++) {
         tlx = min(tlx, scanBBs[i].tl().x);
         tly = min(tly, scanBBs[i].tl().y);
         brx = max(brx, scanBBs[i].br().x);
@@ -177,8 +175,7 @@ void Detector::genPosData(const Mat &img, const Mat &imgB, const Mat &img32F, TY
     cx = round((double)(tlx + brx) / 2);
     cy = round((double)(tly + bry) / 2);
     
-    for(int j = 0; j < DETECTOR_N_WARPED; j++)
-    {
+    for(int j = 0; j < DETECTOR_N_WARPED; j++) {
         Mat warped;
         
         if(j != 0)
@@ -199,7 +196,7 @@ void Detector::genPosData(const Mat &img, const Mat &imgB, const Mat &img32F, TY
         {
             Rect rect(scanBBs[i].tl() - tl, scanBBs[i].br() - tl);
             
-            TYPE_TRAIN_DATA trainData(make_pair(warped(rect), CLASS_POS));
+            TYPE_TRAIN_DATA trainData(make_pair<Mat, char>(warped(rect), CLASS_POS));
             trainDataSetRF.push_back(trainData);
             
             count++;
@@ -229,35 +226,33 @@ void Detector::genNegData(const Mat &img, const Mat &imgB, const Mat &img32F, TY
         // NN - NEG
         if(countNN <= DETECTOR_N_INIT_NN_NEG && c == CLASS_NEG)
         {
-            TYPE_TRAIN_DATA trainDataNN(make_pair(img32F(bb), c));
+            TYPE_TRAIN_DATA trainDataNN(make_pair<Mat, char>(img32F(bb), c));
             trainDataSetNN.push_back(trainDataNN);
             countNN++;
         }
         
         if(countNNT <= DETECTOR_N_INIT_NNT_NEG && c == CLASS_TEST_NEG)
         {
-            TYPE_TRAIN_DATA trainDataNN(make_pair(img32F(bb), c));
+            TYPE_TRAIN_DATA trainDataNN(make_pair<Mat, char>(img32F(bb), c));
             trainDataSetNN.push_back(trainDataNN);
             countNNT++;
         }
         
         // RF - NEG
-        TYPE_TRAIN_DATA trainDataRF(make_pair(imgB(bb), c));
+        TYPE_TRAIN_DATA trainDataRF(make_pair<Mat, char>(imgB(bb), c));
         trainDataSetRF.push_back(trainDataRF);
         
         if(c == CLASS_NEG) countRF++;
         if(c == CLASS_TEST_NEG) countRFT++;
     }
-    
-    stringstream info;
-    info << "Generated " << countNN << " negative example(s) for NN, and " << countRF << " negative example(s) for RF.";
 
-    info.clear();
-    info << "Generated " << countNNT << " negative example(s) for NN testing, and " << countRFT << " negative example(s) for RF testing.";
+#ifdef OUTPUT_STD
+    cout << "Generated " << countNN << " negative example(s) for NN, and " << countRF << " negative example(s) for RF." << endl;
+    cout << "Generated " << countNNT << " negative example(s) for NN testing, and " << countRFT << " negative example(s) for RF testing." << endl;
+#endif
 }
 
-void Detector::dectect(const Mat &img, const Mat &imgB, const Mat &img32F, TYPE_DETECTOR_RET &ret)
-{
+void Detector::dectect(const Mat &img, const Mat &imgB, const Mat &img32F, TYPE_DETECTOR_RET &ret) {
     ret.clear();
     rfRet.clear();
     
@@ -265,62 +260,46 @@ void Detector::dectect(const Mat &img, const Mat &imgB, const Mat &img32F, TYPE_
     
     int count = 0;
     int acVar = 0, acRF = 0;
-    for(auto &scanBB : scanBBs)
-    {
+    for(auto &scanBB : scanBBs) {
         TYPE_DETECTOR_SCANBB &bb = scanBB;
         count++;
         
-        if(varClassifier.getClass(bb, patternVar) == CLASS_POS)
-        {
+        if(varClassifier.getClass(bb, patternVar) == CLASS_POS) {
             acVar++;
-            if(rFClassifier.getClass(imgB(bb), bb) == CLASS_POS)
-            {
+            if(rFClassifier.getClass(imgB(bb), bb) == CLASS_POS) {
                 acRF++;
                 rfRet.push_back(bb);
-            }
-            else
-            {
+            } else {
                 bb.status = DETECTOR_REJECT_RF;
             }
-        }
-        else
-        {
+        } else {
             bb.status = DETECTOR_REJECT_VAR;
         }
     }
     
-    if(rfRet.size() > DETECTOR_MAX_ENTER_NN)
-    {
+    if(rfRet.size() > DETECTOR_MAX_ENTER_NN) {
         sort(rfRet.begin(), rfRet.end(), TYPE_DETECTOR_SCANBB::cmpP);
         rfRet.resize(DETECTOR_MAX_ENTER_NN);
     }
 
-    for(auto &bb : rfRet)
-    {
-        if(nNClassifier.getClass(img32F(bb), bb))
-        {
+    for(auto &bb : rfRet) {
+        if(nNClassifier.getClass(img32F(bb), bb)) {
             ret.push_back(bb);
             
             bb.status = DETECTOR_ACCEPTED;
-        }
-        else
-        {
+        } else {
             bb.status = DETECTOR_REJECT_NN;
         }
     }
-    
-    stringstream info;
-    info << "After Variance Classifier remains " << acVar << " bounding boxes.";
-    
-    stringstream info2;
-    info2 << "After Random Ferns Classifier remains " << acRF << " bounding boxes.";
-    
-    stringstream info3;
-    info3 << "After Nearest Neighbor Classifier remains " << ret.size() << " bounding boxes.";
+
+#ifdef OUTPUT_STD
+    cout << "After Variance Classifier remains " << acVar << " bounding boxes." << endl;
+    cout << "After Random Ferns Classifier remains " << acRF << " bounding boxes." << endl;
+    cout << "After Nearest Neighbor Classifier remains " << ret.size() << " bounding boxes." << endl;
+#endif
 }
 
-void Detector::updataNNPara(const cv::Mat &img32F, TYPE_DETECTOR_SCANBB &sbb)
-{
+void Detector::updataNNPara(const cv::Mat &img32F, TYPE_DETECTOR_SCANBB &sbb) {
     nNClassifier.getClass(img32F(sbb), sbb);
 }
 

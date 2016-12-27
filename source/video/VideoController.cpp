@@ -4,18 +4,26 @@
 
 #include "VideoController.h"
 
-VideoController::VideoController(const string &path):
-    curr(0), frame(0), cameraMode(false), imageMode(false)
+VideoController::VideoController(const string &path, bool isCorp):
+    curr(0), frame(0), cameraMode(false), imageMode(false), videoMode(true), retWindowName("TLD")
 {
     videoCapture = new VideoCapture(path);
-    
-    _frameSize = Size(videoCapture->get(CV_CAP_PROP_FRAME_WIDTH), videoCapture->get(CV_CAP_PROP_FRAME_HEIGHT));
-    // check if the video file is opened
-    
-    int width = videoCapture->get(CV_CAP_PROP_FRAME_WIDTH);
-    int height = videoCapture->get(CV_CAP_PROP_FRAME_HEIGHT);
-    _frameSize = Size(width * (120.f /width), height * (120.f / width));
-
+    Mat tmp;
+    if(videoCapture->isOpened() && videoCapture->read(tmp)) {
+        int width = tmp.cols, height = tmp.rows;
+        if(isCorp) {
+            _videoROIRect = Rect(0, 0, width/2, height/4);
+            _frameSize = Size(width/2, height/4);
+            frames[curr] = tmp(_videoROIRect);
+        } else {
+            _frameSize = Size(width, height);
+            frames[curr] = tmp;
+        }
+    } else {
+        cerr << "Unable to read next frame." << endl;
+        cerr << "Exiting..." << endl;
+        exit(EXIT_FAILURE);
+    }
 }
 
 VideoController::VideoController(const string &_path, const string &_append):
@@ -44,6 +52,9 @@ VideoController::~VideoController() {
     if(cameraMode) {
         delete videoCapture;
         videoCapture = NULL;
+    } else if(videoMode) {
+        delete videoCapture;
+        videoCapture = NULL;
     }
 }
 
@@ -68,8 +79,14 @@ bool VideoController::readNextFrame() {
             return true;
         }
         return false;
-    } else {
+    } else if(cameraMode) {
         bool f = videoCapture -> read(frames[curr]);
+        frames[curr].copyTo(cache);
+        return f;
+    } else if(videoMode) {
+        Mat tmpFrame;
+        bool f = videoCapture->read(tmpFrame);
+        frames[curr] = tmpFrame(_videoROIRect);
         frames[curr].copyTo(cache);
         return f;
     }
