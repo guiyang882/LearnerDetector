@@ -8,8 +8,7 @@
 #include <iostream>
 #include <algorithm>
 #include <opencv2/opencv.hpp>
-#include <opencv2/legacy/legacy.hpp>
-
+#include "../utils/PatchGenerator.h"
 #include "../utils/VarClassifier.h"
 #include "../utils/RandomFernsClassifier.h"
 #include "../utils/NNClassifier.h"

@@ -10,10 +10,8 @@
 #include <opencv2/opencv.hpp>
 #include <algorithm>
 
-#include "tracker/medianflow/MedianFlow.h"
 #include "detector/Detector.h"
 #include "learner/Learner.h"
-
 #include "TLDSystemStruct.h"
 
 using namespace std;

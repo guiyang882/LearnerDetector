@@ -7,7 +7,7 @@
 
 #include <iostream>
 #include <opencv2/opencv.hpp>
-
+#include "../utils/PatchGenerator.h"
 #include "../TLDSystemStruct.h"
 #include "../detector/Detector.h"
 
