@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/TLD.cpp
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/TLD.cpp
 TLD.h
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/TLD.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/TLD.h
 
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/TLD.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/TLD.h
 iostream
 -
 queue
@@ -20,23 +20,23 @@ opencv2/opencv.hpp
 algorithm
 -
 detector/Detector.h
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/detector/Detector.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/detector/Detector.h
 learner/Learner.h
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/learner/Learner.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/learner/Learner.h
 TLDSystemStruct.h
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/TLDSystemStruct.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/TLDSystemStruct.h
 
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/TLDSystemStruct.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/TLDSystemStruct.h
 opencv2/opencv.hpp
 -
 vector
 -
 
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/detector/Detector.cpp
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/detector/Detector.cpp
 Detector.h
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/detector/Detector.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/detector/Detector.h
 
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/detector/Detector.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/detector/Detector.h
 iostream
 -
 algorithm
@@ -44,67 +44,69 @@ algorithm
 opencv2/opencv.hpp
 -
 ../utils/PatchGenerator.h
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/utils/PatchGenerator.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/utils/PatchGenerator.h
 ../utils/VarClassifier.h
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/utils/VarClassifier.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/utils/VarClassifier.h
 ../utils/RandomFernsClassifier.h
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/utils/RandomFernsClassifier.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/utils/RandomFernsClassifier.h
 ../utils/NNClassifier.h
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/utils/NNClassifier.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/utils/NNClassifier.h
 ../learner/Learner.h
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/learner/Learner.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/learner/Learner.h
 ../TLDSystemStruct.h
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/TLDSystemStruct.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/TLDSystemStruct.h
 
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/learner/Learner.cpp
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/learner/Learner.cpp
 Learner.h
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/learner/Learner.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/learner/Learner.h
 
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/learner/Learner.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/learner/Learner.h
 iostream
 -
 opencv2/opencv.hpp
 -
 ../utils/PatchGenerator.h
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/utils/PatchGenerator.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/utils/PatchGenerator.h
 ../TLDSystemStruct.h
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/TLDSystemStruct.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/TLDSystemStruct.h
 ../detector/Detector.h
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/detector/Detector.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/detector/Detector.h
 
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/main.cpp
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/main.cpp
 iostream
 -
 opencv2/opencv.hpp
 -
 utils/RandomFernsClassifier.h
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/utils/RandomFernsClassifier.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/utils/RandomFernsClassifier.h
 utils/NNClassifier.h
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/utils/NNClassifier.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/utils/NNClassifier.h
 detector/Detector.h
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/detector/Detector.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/detector/Detector.h
 TLD.h
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/TLD.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/TLD.h
 TLDSystemStruct.h
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/TLDSystemStruct.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/TLDSystemStruct.h
+utils/datareader.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/utils/datareader.h
 
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/TrackerBase.cpp
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/tracker/TrackerBase.cpp
 TrackerBase.h
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/TrackerBase.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/tracker/TrackerBase.h
 
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/tracker/TrackerBase.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/tracker/TrackerBase.h
 iostream
 -
 cmath
 -
 ../TLDSystemStruct.h
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/TLDSystemStruct.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/TLDSystemStruct.h
 
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/utils/NNClassifier.cpp
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/utils/NNClassifier.cpp
 NNClassifier.h
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/utils/NNClassifier.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/utils/NNClassifier.h
 
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/utils/NNClassifier.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/utils/NNClassifier.h
 iostream
 -
 opencv2/opencv.hpp
@@ -112,49 +114,71 @@ opencv2/opencv.hpp
 vector
 -
 ../TLDSystemStruct.h
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/TLDSystemStruct.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/TLDSystemStruct.h
 
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/utils/PatchGenerator.cpp
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/utils/PatchGenerator.cpp
 opencv2/opencv.hpp
 -
 PatchGenerator.h
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/utils/PatchGenerator.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/utils/PatchGenerator.h
 
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/utils/PatchGenerator.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/utils/PatchGenerator.h
 opencv2/opencv.hpp
 -
 
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/utils/RandomFernsClassifier.cpp
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/utils/RandomFernsClassifier.cpp
 RandomFernsClassifier.h
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/utils/RandomFernsClassifier.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/utils/RandomFernsClassifier.h
 
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/utils/RandomFernsClassifier.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/utils/RandomFernsClassifier.h
 iostream
 -
 opencv2/opencv.hpp
 -
 ../TLDSystemStruct.h
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/TLDSystemStruct.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/TLDSystemStruct.h
 map
 -
 
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/utils/VarClassifier.cpp
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/utils/VarClassifier.cpp
 VarClassifier.h
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/utils/VarClassifier.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/utils/VarClassifier.h
 
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/utils/VarClassifier.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/utils/VarClassifier.h
 iostream
 -
 opencv2/opencv.hpp
 -
 ../TLDSystemStruct.h
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/TLDSystemStruct.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/TLDSystemStruct.h
 
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/utils/utils.cpp
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/utils/datareader.cpp
+datareader.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/utils/datareader.h
+
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/utils/datareader.h
+iostream
+-
+fstream
+-
+stdexcept
+-
+sstream
+-
+vector
+-
+queue
+-
+opencv2/opencv.hpp
+-
+unistd.h
+-
+
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/utils/utils.cpp
 utils.h
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/utils/utils.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/utils/utils.h
 
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/utils/utils.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/utils/utils.h
 opencv2/opencv.hpp
 -
 iostream
@@ -162,7 +186,7 @@ iostream
 vector
 -
 ../TLDSystemStruct.h
-/Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/source/TLDSystemStruct.h
+/Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/TLDSystemStruct.h
 
 /usr/local/include/boost/assert.hpp
 boost/config.hpp

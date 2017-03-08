@@ -48,10 +48,10 @@ RM = /usr/local/Cellar/cmake/3.7.1/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD
+CMAKE_SOURCE_DIR = /Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/bin
+CMAKE_BINARY_DIR = /Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/bin
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/bin/CMakeFiles /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/bin/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/bin/CMakeFiles /Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/bin/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/liuguiyang/Documents/CodeProj/ConsoleProj/TLD/bin/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/bin/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -366,6 +366,33 @@ source/utils/VarClassifier.cpp.s:
 	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/utils/VarClassifier.cpp.s
 .PHONY : source/utils/VarClassifier.cpp.s
 
+source/utils/datareader.o: source/utils/datareader.cpp.o
+
+.PHONY : source/utils/datareader.o
+
+# target to build an object file
+source/utils/datareader.cpp.o:
+	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/utils/datareader.cpp.o
+.PHONY : source/utils/datareader.cpp.o
+
+source/utils/datareader.i: source/utils/datareader.cpp.i
+
+.PHONY : source/utils/datareader.i
+
+# target to preprocess a source file
+source/utils/datareader.cpp.i:
+	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/utils/datareader.cpp.i
+.PHONY : source/utils/datareader.cpp.i
+
+source/utils/datareader.s: source/utils/datareader.cpp.s
+
+.PHONY : source/utils/datareader.s
+
+# target to generate assembly for a file
+source/utils/datareader.cpp.s:
+	$(MAKE) -f CMakeFiles/TLD.dir/build.make CMakeFiles/TLD.dir/source/utils/datareader.cpp.s
+.PHONY : source/utils/datareader.cpp.s
+
 source/utils/utils.o: source/utils/utils.cpp.o
 
 .PHONY : source/utils/utils.o
@@ -429,6 +456,9 @@ help:
 	@echo "... source/utils/VarClassifier.o"
 	@echo "... source/utils/VarClassifier.i"
 	@echo "... source/utils/VarClassifier.s"
+	@echo "... source/utils/datareader.o"
+	@echo "... source/utils/datareader.i"
+	@echo "... source/utils/datareader.s"
 	@echo "... source/utils/utils.o"
 	@echo "... source/utils/utils.i"
 	@echo "... source/utils/utils.s"

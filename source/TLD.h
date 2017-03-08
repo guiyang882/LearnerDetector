@@ -1,7 +1,3 @@
-//
-//  TLD.h
-//  TLD
-
 #ifndef __TLD__TLD__
 #define __TLD__TLD__
 
@@ -19,7 +15,6 @@ using namespace cv;
 
 class TLD {
 private:
-    MedianFlow *medianflow_tracker;
     Detector detector;
     Learner learner;
     
@@ -37,6 +32,7 @@ private:
     int cluster();
     
 public:
+    TLD() {};
     TLD(const Mat &img, const TYPE_BBOX &bb);
     ~TLD();
     
@@ -46,4 +42,4 @@ public:
     TYPE_BBOX getBB();
 };
 
-#endif /* defined(__TLD__TLD__) */
+#endif

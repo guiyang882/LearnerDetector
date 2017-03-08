@@ -22,7 +22,7 @@ typedef pair<Mat, char> TYPE_TRAIN_DATA;
 typedef vector<TYPE_TRAIN_DATA> TYPE_TRAIN_DATA_SET;
 
 typedef pair<Point2f, Point2f> TYPE_FERN_LEAF; // save pixel comparision
-typedef vector<vector<TYPE_FERN_LEAF> > TYPE_FERN_FERNS; // save all ferns
+typedef vector<vector<TYPE_FERN_LEAF>> TYPE_FERN_FERNS; // save all ferns
 
 static const TYPE_OF_PT PT_ERROR = TYPE_OF_PT(-1, -1);
 static const TYPE_MF_BB BB_ERROR = TYPE_MF_BB(PT_ERROR, PT_ERROR);
@@ -57,6 +57,7 @@ public:
         return a.posterior > b.posterior;
     }
 };
+
 typedef vector<TYPE_DETECTOR_SCANBB> TYPE_DETECTOR_SCANBBS;
 typedef vector<TYPE_DETECTOR_SCANBB> TYPE_DETECTOR_RET;
 

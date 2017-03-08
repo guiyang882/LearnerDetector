@@ -1,7 +1,3 @@
-//
-//  TLD.cpp
-//  TLD
-
 #include "TLD.h"
 
 TLD::TLD(const Mat &img, const TYPE_BBOX &_bb) {
@@ -13,7 +9,6 @@ TLD::TLD(const Mat &img, const TYPE_BBOX &_bb) {
     learner.init(&detector);
     
     trainValid = true;
-    medianflow_tracker = NULL;
 }
 
 TLD::~TLD() {
@@ -113,9 +108,7 @@ int TLD::track(TRACK_TYPE track_type) {
     int tld_track_status = 0;
 
     if(track_type == MEDIANFLOW) {
-        medianflow_tracker = MedianFlow::getInstance();
-        medianflow_tracker->updateImage(prevImg, nextImg);
-        TYPE_MF_BB _trackerRet = medianflow_tracker->trackBox(bbox, tld_track_status);
+        TYPE_MF_BB _trackerRet;
         TYPE_DETECTOR_SCANBB trackerRet(Rect(round(_trackerRet.x), round(_trackerRet.y), round(_trackerRet.width), round(_trackerRet.height)));
         tld_track_status = learning_detecting(tld_track_status, trackerRet);
     } else if(track_type == SIFT_KALMAN) {
