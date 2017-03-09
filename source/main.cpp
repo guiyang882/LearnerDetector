@@ -11,7 +11,7 @@
 using namespace std;
 using namespace cv;
 
-void testOnTLDDataset() {
+void demoLearning() {
     string listpath = "/Users/liuguiyang/Desktop/airplane-remote/path.list";
     string groundpath = "/Users/liuguiyang/Desktop/airplane-remote/ground.list";
     InputReader reader(listpath, groundpath);
@@ -24,15 +24,11 @@ void testOnTLDDataset() {
         CandidateWindow::makeCandidateWindows(curImg, windows, minSize);
         clock_t ed = clock();
         cout << "Time : " << (double)(ed - st) / CLOCKS_PER_SEC * 1000 << "ms" << endl;
-        for(auto item:windows) {
-            cout << item.first << " : " << item.second.size() << endl;
-        }
-        break;
     }
 }
 
 int main(int argc, char *argv[]) {
-    testOnTLDDataset();
+    demoLearning();
     return 0;
 }
 

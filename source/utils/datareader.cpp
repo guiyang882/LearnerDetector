@@ -122,13 +122,41 @@ void CandidateWindow::makeCandidateWindowsWithScale(const Mat &img, vector<Rect>
 			Rect cW(r, c, cWidth, cHeight);
 			tmpRes.push_back(cW);
 		}
+
 #pragma omp critical
 		copy(tmpRes.begin(), tmpRes.end(), back_inserter(windows));
 	}
 }
 
-void CandidateWindow::makePositiveWindows(const vector<Rect> &posWindows, vector<Rect> &genPosWindows, const double overlapRatio) {
+void CandidateWindow::makePositiveWindows(const vector<Rect> &posWindows, vector<Rect> &genPosWindows, 
+										  const Rect &maxRect, const double overlapRatio) {
+	const int maxWidth = maxRect.size().width;
+	const int maxHeight = maxRect.size().height;
+	const double ratio = sqrt(overlapRatio);
+	int numThreads = getNumThreads();
 
+#pragma omp parallel for num_threads(numThreads)
+	for(int i=0;i<posWindows.size();i++) {
+		const int r0 = posWindows[i].tl().x;
+		const int c0 = posWindows[i].tl().y;
+		const int width = posWindows[i].width;
+		const int height = posWindows[i].height;
+		const int r_low = max(0, int(r0 - (1 - ratio) * height));
+		const int r_up = r0 + (1 - ratio) * height;
+		const int c_low = max(0, int(c0 - (1 - ratio) * width));
+		const int c_up = c0 + (1 - ratio) * height;
+
+		vector<Rect> tmpRes;
+		for(int r=r_low; r<=r_up; r++) {
+			for(int c=c_low; c<=c_up; c++) {
+				Rect cW(r, c, min(width, maxWidth-c), min(height, maxHeight-r));
+				tmpRes.push_back(cW);
+			}
+		}
+
+#pragma omp critical
+		copy(tmpRes.begin(), tmpRes.end(), back_inserter(genPosWindows));
+	}
 }
 
 

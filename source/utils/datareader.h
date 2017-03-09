@@ -48,12 +48,15 @@ private:
 class CandidateWindow {
 public:
 	// 对于给定的图像，产生候选框，返回在windows中
-	static void makeCandidateWindows(const Mat& img, unordered_map<double, vector<Rect>> &windows, const Rect &minWin);
+	static void makeCandidateWindows(const Mat& img, unordered_map<double, vector<Rect>> &windows, 
+									 const Rect &minWin);
 	
 	// 对于给定的图像和缩放的比例，产生给定scale的候选框，返回在windows中
-	static void makeCandidateWindowsWithScale(const Mat &img, vector<Rect> &windows, const Rect &minWin, const double scale);
+	static void makeCandidateWindowsWithScale(const Mat &img, vector<Rect> &windows, 
+											  const Rect &minWin, const double scale);
 
 	// 对于给定的正样本框，产生同正样本重合度为指定比例的候选框
 	// 对于产生的新的样本单独存放在genPosWindows中
-	static void makePositiveWindows(const vector<Rect> &posWindows, vector<Rect> &genPosWindows, const double overlapRatio);
+	static void makePositiveWindows(const vector<Rect> &posWindows, vector<Rect> &genPosWindows, 
+									const Rect &maxRect, const double overlapRatio);
 };
