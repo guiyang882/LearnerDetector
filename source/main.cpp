@@ -16,24 +16,18 @@ void testOnTLDDataset() {
     string groundpath = "/Users/liuguiyang/Desktop/airplane-remote/ground.list";
     InputReader reader(listpath, groundpath);
 
-    TLD tld; Mat curImg; vector<Rect> rectVec;
+    Mat curImg; vector<Rect> rectVec;
     while(reader.readNextImage(curImg, rectVec)) {
-
-        tld.setNextFrame(curImg);
-
-        TYPE_DETECTOR_RET bbDetect;
-
         clock_t st = clock();
-        tld.track();
+        unordered_map<double, vector<Rect>> windows;
+        const Rect minSize(0, 0, 20, 20);
+        CandidateWindow::makeCandidateWindows(curImg, windows, minSize);
         clock_t ed = clock();
         cout << "Time : " << (double)(ed - st) / CLOCKS_PER_SEC * 1000 << "ms" << endl;
-
-        Rect retBB = tld.getBB();
-        if(retBB == Rect(Point2d(-1, -1), Point2d(-1, -1))) {
-            cout << "NaN,NaN,NaN,NaN" << endl;
-        } else {
-            cout << retBB.tl().x << retBB.tl().y << retBB.width << retBB.height << endl;
+        for(auto item:windows) {
+            cout << item.first << " : " << item.second.size() << endl;
         }
+        break;
     }
 }
 

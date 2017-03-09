@@ -72,6 +72,10 @@ bool InputReader::readGroundFile(const string &path, vector<Rect> &vals) {
 	stringstream ss;
 	ss.clear();
 	while(getline(fin, info)) {
+		if(info.size() < 7) {
+			continue;
+		}
+		ss.clear();
 		ss.str(info);
 		string a1, a2, a3, a4;
 		getline(ss, a1, ',');
@@ -83,3 +87,52 @@ bool InputReader::readGroundFile(const string &path, vector<Rect> &vals) {
 	}
 	return true;
 }
+
+/*
+主要是根据给定的的图像尺寸，将产生不同的等级的候选窗口
+ */
+void CandidateWindow::makeCandidateWindows(const Mat& img, unordered_map<double, vector<Rect>> &windows, const Rect &minWin) {
+	const vector<double> scales = {1.0, 1.5, 1.75, 2.0};
+	int numThreads = getNumThreads();
+#pragma omp parallel for num_threads(numThreads)	
+	for(int i=0;i<scales.size();i++) {
+		const double scale = scales[i];
+		vector<Rect> tmpRes;
+		makeCandidateWindowsWithScale(img, tmpRes, minWin, scale);
+
+#pragma omp critical
+		windows[scale] = tmpRes;
+	}
+}
+
+void CandidateWindow::makeCandidateWindowsWithScale(const Mat &img, vector<Rect> &windows, 
+													const Rect &minWin, const double scale) {
+	const int width = img.size().width;
+	const int height = img.size().height;
+	const int minWidth = minWin.width * scale;
+	const int minHeight = minWin.height * scale;
+	int numThreads = getNumThreads();
+
+#pragma omp parallel for num_threads(numThreads)
+	for(int r=0;r<=height-minHeight/2;r+=minHeight/2) {
+		vector<Rect> tmpRes;
+		for(int c=0;c<=width-minWidth/2;c+=minWidth/2) {
+			int cWidth = min(minWidth, width-c);
+			int cHeight = min(minHeight, height-c);
+			Rect cW(r, c, cWidth, cHeight);
+			tmpRes.push_back(cW);
+		}
+#pragma omp critical
+		copy(tmpRes.begin(), tmpRes.end(), back_inserter(windows));
+	}
+}
+
+void CandidateWindow::makePositiveWindows(const vector<Rect> &posWindows, vector<Rect> &genPosWindows, const double overlapRatio) {
+
+}
+
+
+
+
+
+

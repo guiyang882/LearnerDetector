@@ -169,9 +169,15 @@ vector
 -
 queue
 -
+unordered_map
+-
 opencv2/opencv.hpp
 -
 unistd.h
+-
+omp.h
+-
+omp.h
 -
 
 /Users/liuguiyang/Documents/CodeProj/ConsoleProj/LearnerDector/source/utils/utils.cpp
@@ -918,6 +924,10 @@ boost/current_function.hpp
 
 /usr/local/include/boost/utility/addressof.hpp
 boost/core/addressof.hpp
+-
+
+/usr/local/include/libiomp/omp.h
+stdlib.h
 -
 
 /usr/local/include/opencv/cxcore.h

@@ -3,12 +3,14 @@ project(TLD)
 
 set(CMAKE_CXX_STANDARD 11)
 
+set(CMAKE_CXX_COMPILER /usr/local/bin/clang-omp++)
+
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fopenmp -O3")
 ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -fopenmp")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fopenmp")
 ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 
 if (NOT CMAKE_BUILD_TYPE)
@@ -16,8 +18,11 @@ if (NOT CMAKE_BUILD_TYPE)
     message(STATUS "No Build Type selected, default to ${CMAKE_BUILD_TYPE}")
 endif()
 
-#set(RUN_TYPE "-DOUTPUT_STD")
-#add_definitions(${RUN_TYPE})
+include_directories(/usr/local/include/libiomp)
+link_directories(/usr/local/lib)
+
+ADD_DEFINITIONS(-D_OPENMP)
+ADD_DEFINITIONS(-DOUTPUT_STD)
 
 find_package(OpenCV 3 REQUIRED)
 
@@ -46,4 +51,4 @@ set(SOURCE_FILES
     source/main.cpp)
 
 add_executable(TLD ${SOURCE_FILES})
-target_link_libraries(TLD ${OpenCV_LIBS})
+target_link_libraries(TLD ${OpenCV_LIBS} pthread iomp5)
