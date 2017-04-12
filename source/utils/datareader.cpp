@@ -111,16 +111,21 @@ void CandidateWindow::makeCandidateWindowsWithScale(const Mat &img, vector<Rect>
 	const int height = img.size().height;
 	const int minWidth = minWin.width * scale;
 	const int minHeight = minWin.height * scale;
+#ifdef OUTPUT_STD
+	cout << "width: " << width << ", height: " << height << ", minWidth:" << minWidth << ", minHeight: " << minHeight << endl;
+#endif
 	int numThreads = getNumThreads();
 
 #pragma omp parallel for num_threads(numThreads)
-	for(int r=0;r<=height-minHeight/2;r+=minHeight/2) {
+	for(int r=0;r<=height-minHeight;r+=minHeight/2) {
 		vector<Rect> tmpRes;
-		for(int c=0;c<=width-minWidth/2;c+=minWidth/2) {
+		for(int c=0;c<=width-minWidth;c+=minWidth/2) {
 			int cWidth = min(minWidth, width-c);
 			int cHeight = min(minHeight, height-c);
-			Rect cW(r, c, cWidth, cHeight);
-			tmpRes.push_back(cW);
+            if(cWidth == minWidth && cHeight == minHeight) {
+                Rect cW(r, c, cWidth, cHeight);
+                tmpRes.push_back(cW);
+            }
 		}
 
 #pragma omp critical
@@ -159,8 +164,47 @@ void CandidateWindow::makePositiveWindows(const vector<Rect> &posWindows, vector
 	}
 }
 
+void CandidateWindow::makeCandidateWindowsROIMat(const Mat& img, unordered_map<double, vector<Mat>> &windows, 
+								 const Rect &minWin) {
+	const vector<double> scales = {1.0, 1.5, 1.75, 2.0};
+	int numThreads = getNumThreads();
+#pragma omp parallel for num_threads(numThreads)	
+	for(int i=0;i<scales.size();i++) {
+		const double scale = scales[i];
+		vector<Mat> tmpRes;
+		makeCandidateWindowsWithScaleROIMat(img, tmpRes, minWin, scale);
 
+#pragma omp critical
+		windows[scale] = tmpRes;
+	}
+}
 
+void CandidateWindow::makeCandidateWindowsWithScaleROIMat(const Mat &img, vector<Mat> &windows, 
+										  const Rect &minWin, const double scale) {
+	const int width = img.size().width;
+	const int height = img.size().height;
+	const int minWidth = minWin.width * scale;
+	const int minHeight = minWin.height * scale;
+#ifdef OUTPUT_STD
+	cout << "width: " << width << ", height: " << height << ", minWidth:" << minWidth << ", minHeight: " << minHeight << endl;
+#endif
+	int numThreads = getNumThreads();
+#pragma omp parallel for num_threads(numThreads)
+	for(int r=0;r<=height-minHeight;r+=minHeight/2) {
+		vector<Mat> tmpRes;
+		for(int c=0;c<=width-minWidth;c+=minWidth/2) {
+			int cWidth = min(minWidth, width-c);
+			int cHeight = min(minHeight, height-c);
+            if(cWidth == minWidth && cHeight == minHeight) {
+                Rect cW(r, c, cWidth, cHeight);
+                tmpRes.push_back(img(cW));
+            }
+		}
+
+#pragma omp critical
+		copy(tmpRes.begin(), tmpRes.end(), back_inserter(windows));
+	}
+}
 
 
 

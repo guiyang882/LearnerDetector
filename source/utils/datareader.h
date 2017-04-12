@@ -50,9 +50,17 @@ public:
 	// 对于给定的图像，产生候选框，返回在windows中
 	static void makeCandidateWindows(const Mat& img, unordered_map<double, vector<Rect>> &windows, 
 									 const Rect &minWin);
-	
+
 	// 对于给定的图像和缩放的比例，产生给定scale的候选框，返回在windows中
 	static void makeCandidateWindowsWithScale(const Mat &img, vector<Rect> &windows, 
+											  const Rect &minWin, const double scale);
+
+	// 对于给定的图像，产生候选框，并且将对应的图像中的区域写入到windows中，返回在windows中
+	static void makeCandidateWindowsROIMat(const Mat& img, unordered_map<double, vector<Mat>> &windows, 
+									 const Rect &minWin);
+	
+	// 对于给定的图像和缩放的比例，产生给定scale的候选框，返回在windows中
+	static void makeCandidateWindowsWithScaleROIMat(const Mat &img, vector<Mat> &windows, 
 											  const Rect &minWin, const double scale);
 
 	// 对于给定的正样本框，产生同正样本重合度为指定比例的候选框

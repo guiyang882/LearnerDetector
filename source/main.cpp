@@ -12,18 +12,69 @@ using namespace std;
 using namespace cv;
 
 void demoLearning() {
-    string listpath = "/Users/liuguiyang/Desktop/airplane-remote/path.list";
+    string listpath = "/Users/liuguiyang/Documents/CodeProj/PyProj/TinyObjectDetection/trainmodel/data/JL1th/image.list";
     string groundpath = "/Users/liuguiyang/Desktop/airplane-remote/ground.list";
-    InputReader reader(listpath, groundpath);
+    InputReader reader(listpath);
 
-    Mat curImg; vector<Rect> rectVec;
-    while(reader.readNextImage(curImg, rectVec)) {
+#ifdef OUTPUT_STD
+    cout << "Init InputReader !" << endl;
+    cout << "Reader from " << listpath << endl;
+#endif
+
+    Mat curImg;
+    while(reader.readNextImage(curImg)) {
+
+#ifdef OUTPUT_STD
+        cout << curImg.size().width << ", " << curImg.size().height << endl;
+#endif
+        bool isMultiScale = false;
         clock_t st = clock();
-        unordered_map<double, vector<Rect>> windows;
-        const Rect minSize(0, 0, 20, 20);
-        CandidateWindow::makeCandidateWindows(curImg, windows, minSize);
+        if(isMultiScale) {
+            unordered_map<double, vector<Rect>> windows;
+            const Rect minSize(0, 0, 32, 32);
+            CandidateWindow::makeCandidateWindows(curImg, windows, minSize);
+            clock_t ed = clock();
+
+            cout << "Use Time : " << (double)(ed - st) / CLOCKS_PER_SEC * 1000 << "ms" << endl;
+            cout << "Direct Search nums :" << endl;
+            for(auto item:windows) {
+                cout << "\t" << item.first << ": " << item.second.size() << endl;
+            }
+        } else {
+            vector<Rect> windows;
+            const Rect minSize(0, 0, 32, 32);
+            CandidateWindow::makeCandidateWindowsWithScale(curImg, windows, minSize, 1.0);
+            clock_t ed = clock();
+
+            cout << "Use Time : " << (double)(ed - st) / CLOCKS_PER_SEC * 1000 << "ms" << endl;
+            cout << "Direct Search nums :" << endl;
+            cout << "\t" << windows.size() << endl;
+        }
+        cout << "Test for Crop Images ROI ..........." << endl;
+        st = clock();
+        if(isMultiScale) {
+            unordered_map<double, vector<Mat>> windows;
+            const Rect minSize(0, 0, 32, 32);
+            CandidateWindow::makeCandidateWindowsROIMat(curImg, windows, minSize);
+            clock_t ed = clock();
+
+            cout << "Use Time : " << (double)(ed - st) / CLOCKS_PER_SEC * 1000 << "ms" << endl;
+            cout << "Direct Search nums :" << endl;
+            for(auto item:windows) {
+                cout << "\t" << item.first << ": " << item.second.size() << endl;
+            }
+        } else {
+            vector<Mat> windows;
+            const Rect minSize(0, 0, 32, 32);
+            CandidateWindow::makeCandidateWindowsWithScaleROIMat(curImg, windows, minSize, 1);
+            clock_t ed = clock();
+
+            cout << "Use Time : " << (double)(ed - st) / CLOCKS_PER_SEC * 1000 << "ms" << endl;
+            cout << "Direct Search nums :" << endl;
+            cout << "\t" << windows.size() << endl;
+        }
         clock_t ed = clock();
-        cout << "Time : " << (double)(ed - st) / CLOCKS_PER_SEC * 1000 << "ms" << endl;
+        break;
     }
 }
 

@@ -3,8 +3,11 @@
 *.bmp
 *.ppm
 *.mp4
-data/
 *.data
+*.[ao]
+*.*~
 .idea/
+data/
+bin/
 cmake-build-debug
 !data/readme.md
