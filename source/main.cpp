@@ -32,7 +32,7 @@ void demoLearning() {
         if(isMultiScale) {
             unordered_map<double, vector<Rect>> windows;
             const Rect minSize(0, 0, 32, 32);
-            CandidateWindow::makeCandidateWindows(curImg, windows, minSize);
+            CandidateWindow::makeCandidateWindows(curImg, windows, minSize, 3);
             clock_t ed = clock();
 
             cout << "Use Time : " << (double)(ed - st) / CLOCKS_PER_SEC * 1000 << "ms" << endl;
@@ -43,7 +43,7 @@ void demoLearning() {
         } else {
             vector<Rect> windows;
             const Rect minSize(0, 0, 32, 32);
-            CandidateWindow::makeCandidateWindowsWithScale(curImg, windows, minSize, 1.0);
+            CandidateWindow::makeCandidateWindowsWithScale(curImg, windows, minSize, 1.0, 3);
             clock_t ed = clock();
 
             cout << "Use Time : " << (double)(ed - st) / CLOCKS_PER_SEC * 1000 << "ms" << endl;
@@ -55,7 +55,7 @@ void demoLearning() {
         if(isMultiScale) {
             unordered_map<double, vector<Mat>> windows;
             const Rect minSize(0, 0, 32, 32);
-            CandidateWindow::makeCandidateWindowsROIMat(curImg, windows, minSize);
+            CandidateWindow::makeCandidateWindowsROIMat(curImg, windows, minSize, 3);
             clock_t ed = clock();
 
             cout << "Use Time : " << (double)(ed - st) / CLOCKS_PER_SEC * 1000 << "ms" << endl;
@@ -66,12 +66,18 @@ void demoLearning() {
         } else {
             vector<Mat> windows;
             const Rect minSize(0, 0, 32, 32);
-            CandidateWindow::makeCandidateWindowsWithScaleROIMat(curImg, windows, minSize, 1);
+            CandidateWindow::makeCandidateWindowsWithScaleROIMat(curImg, windows, minSize, 1, 3);
             clock_t ed = clock();
 
             cout << "Use Time : " << (double)(ed - st) / CLOCKS_PER_SEC * 1000 << "ms" << endl;
             cout << "Direct Search nums :" << endl;
             cout << "\t" << windows.size() << endl;
+#ifdef CV_SHOW
+            for(auto item:windows) {
+                imshow("Crop ROI Image", item);
+                waitKey();
+            }
+#endif
         }
         clock_t ed = clock();
         break;

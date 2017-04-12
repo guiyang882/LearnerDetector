@@ -91,14 +91,14 @@ bool InputReader::readGroundFile(const string &path, vector<Rect> &vals) {
 /*
 主要是根据给定的的图像尺寸，将产生不同的等级的候选窗口
  */
-void CandidateWindow::makeCandidateWindows(const Mat& img, unordered_map<double, vector<Rect>> &windows, const Rect &minWin) {
+void CandidateWindow::makeCandidateWindows(const Mat& img, unordered_map<double, vector<Rect>> &windows, const Rect &minWin, int sampleStep) {
 	const vector<double> scales = {1.0, 1.5, 1.75, 2.0};
 	int numThreads = getNumThreads();
 #pragma omp parallel for num_threads(numThreads)	
 	for(int i=0;i<scales.size();i++) {
 		const double scale = scales[i];
 		vector<Rect> tmpRes;
-		makeCandidateWindowsWithScale(img, tmpRes, minWin, scale);
+		makeCandidateWindowsWithScale(img, tmpRes, minWin, scale, sampleStep);
 
 #pragma omp critical
 		windows[scale] = tmpRes;
@@ -106,7 +106,7 @@ void CandidateWindow::makeCandidateWindows(const Mat& img, unordered_map<double,
 }
 
 void CandidateWindow::makeCandidateWindowsWithScale(const Mat &img, vector<Rect> &windows, 
-													const Rect &minWin, const double scale) {
+													const Rect &minWin, const double scale, int sampleStep) {
 	const int width = img.size().width;
 	const int height = img.size().height;
 	const int minWidth = minWin.width * scale;
@@ -115,11 +115,13 @@ void CandidateWindow::makeCandidateWindowsWithScale(const Mat &img, vector<Rect>
 	cout << "width: " << width << ", height: " << height << ", minWidth:" << minWidth << ", minHeight: " << minHeight << endl;
 #endif
 	int numThreads = getNumThreads();
-
+    if(sampleStep == -1) {
+        sampleStep = min(minHeight/2, minWidth/2);
+    }
 #pragma omp parallel for num_threads(numThreads)
-	for(int r=0;r<=height-minHeight;r+=minHeight/2) {
+	for(int r=0;r<=height-minHeight;r+=sampleStep) {
 		vector<Rect> tmpRes;
-		for(int c=0;c<=width-minWidth;c+=minWidth/2) {
+		for(int c=0;c<=width-minWidth;c+=sampleStep) {
 			int cWidth = min(minWidth, width-c);
 			int cHeight = min(minHeight, height-c);
             if(cWidth == minWidth && cHeight == minHeight) {
@@ -165,14 +167,14 @@ void CandidateWindow::makePositiveWindows(const vector<Rect> &posWindows, vector
 }
 
 void CandidateWindow::makeCandidateWindowsROIMat(const Mat& img, unordered_map<double, vector<Mat>> &windows, 
-								 const Rect &minWin) {
+								 const Rect &minWin, int sampleStep) {
 	const vector<double> scales = {1.0, 1.5, 1.75, 2.0};
 	int numThreads = getNumThreads();
 #pragma omp parallel for num_threads(numThreads)	
 	for(int i=0;i<scales.size();i++) {
 		const double scale = scales[i];
 		vector<Mat> tmpRes;
-		makeCandidateWindowsWithScaleROIMat(img, tmpRes, minWin, scale);
+		makeCandidateWindowsWithScaleROIMat(img, tmpRes, minWin, scale, sampleStep);
 
 #pragma omp critical
 		windows[scale] = tmpRes;
@@ -180,7 +182,7 @@ void CandidateWindow::makeCandidateWindowsROIMat(const Mat& img, unordered_map<d
 }
 
 void CandidateWindow::makeCandidateWindowsWithScaleROIMat(const Mat &img, vector<Mat> &windows, 
-										  const Rect &minWin, const double scale) {
+										  const Rect &minWin, const double scale, int sampleStep) {
 	const int width = img.size().width;
 	const int height = img.size().height;
 	const int minWidth = minWin.width * scale;
@@ -189,10 +191,13 @@ void CandidateWindow::makeCandidateWindowsWithScaleROIMat(const Mat &img, vector
 	cout << "width: " << width << ", height: " << height << ", minWidth:" << minWidth << ", minHeight: " << minHeight << endl;
 #endif
 	int numThreads = getNumThreads();
+    if(sampleStep == -1) {
+        sampleStep = min(minHeight/2, minWidth/2);
+    }
 #pragma omp parallel for num_threads(numThreads)
-	for(int r=0;r<=height-minHeight;r+=minHeight/2) {
+	for(int r=0;r<=height-minHeight;r+=sampleStep) {
 		vector<Mat> tmpRes;
-		for(int c=0;c<=width-minWidth;c+=minWidth/2) {
+		for(int c=0;c<=width-minWidth;c+=sampleStep) {
 			int cWidth = min(minWidth, width-c);
 			int cHeight = min(minHeight, height-c);
             if(cWidth == minWidth && cHeight == minHeight) {

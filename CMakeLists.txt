@@ -22,6 +22,7 @@ include_directories(/usr/local/include/libiomp)
 link_directories(/usr/local/lib)
 
 ADD_DEFINITIONS(-D_OPENMP)
+#ADD_DEFINITIONS(-DCV_SHOW)
 ADD_DEFINITIONS(-DOUTPUT_STD)
 
 find_package(OpenCV 3 REQUIRED)
