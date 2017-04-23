@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.6)
-project(TLD)
+project(LearnerDector)
 
 set(CMAKE_CXX_STANDARD 11)
 
@@ -51,5 +51,6 @@ set(SOURCE_FILES
         source/TLDSystemStruct.h
         source/main.cpp)
 
-add_executable(TLD ${SOURCE_FILES})
-target_link_libraries(TLD ${OpenCV_LIBS} pthread iomp5)
+add_executable(LearnerDector ${SOURCE_FILES})
+target_link_libraries(LearnerDector ${OpenCV_LIBS} pthread iomp5)
+

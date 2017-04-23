@@ -1,6 +1,5 @@
 //
 //  Detector.h
-//  TLD
 
 #ifndef __TLD__Detector__
 #define __TLD__Detector__

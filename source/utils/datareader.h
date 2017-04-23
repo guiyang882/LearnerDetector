@@ -31,8 +31,10 @@ public:
 	~InputReader();
 
 public:
-	bool readNextImage(Mat &img);
-	bool readNextImage(Mat &img, vector<Rect> &rectVec);
+	// mode == 0 means rgb color space
+	// mode == 1 means gray scale space
+	bool readNextImage(Mat &img, int mode=0);
+	bool readNextImage(Mat &img, vector<Rect> &rectVec, int mode=0);
 
 public:
 	// 主要是用来读取物体标记出的目标的位置信息，返回一个vector<Rect>

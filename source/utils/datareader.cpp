@@ -39,23 +39,29 @@ InputReader::~InputReader() {
 
 }
 
-bool InputReader::readNextImage(Mat &img) {
+bool InputReader::readNextImage(Mat &img, int mode) {
 	while(!m_queImgsPath.empty()) {
 		string path = m_queImgsPath.front();
 		m_queImgsPath.pop();
-		img = cv::imread(path);
+		if(mode == 0)
+			img = cv::imread(path);
+		else
+			img = cv::imread(path, 0);
 		return true;
 	}
 	return false;
 }
 
-bool InputReader::readNextImage(Mat &img, vector<Rect> &rectVec) {
+bool InputReader::readNextImage(Mat &img, vector<Rect> &rectVec, int mode) {
 	while(!m_queImgsPath.empty()) {
 		string imgPath = m_queImgsPath.front();
 		m_queImgsPath.pop();
 		string rectPath = m_queGroundPath.front();
 		m_queGroundPath.pop();
-		img = cv::imread(imgPath);
+        if(mode == 0)
+			img = cv::imread(imgPath);
+		else
+			img = cv::imread(imgPath, 0);
 		return InputReader::readGroundFile(rectPath, rectVec);
 	}
 	return false;

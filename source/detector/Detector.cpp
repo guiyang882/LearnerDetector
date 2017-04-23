@@ -1,6 +1,5 @@
 //
 //  Detector.cpp
-//  TLD
 
 #include "Detector.h"
 
